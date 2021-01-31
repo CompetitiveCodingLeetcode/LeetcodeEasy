@@ -43,7 +43,7 @@ Output: 0
 
 Constraints:
 
--231 <= x <= 231 - 1"""
+-2^31 <= x <= 2^31 - 1"""
 
 class Solution:
     def reverse(self, x: int) -> int:
@@ -57,7 +57,7 @@ class Solution:
             d = num%10
             num = int(num/10)
             rev = rev*10+d
-        if rev < -2**31 or rev > 2**31-1:
+        if rev not in range(-2**31,2**31):
              return 0
         else:
             if flag == 1:
