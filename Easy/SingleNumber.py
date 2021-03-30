@@ -63,9 +63,27 @@ class Solution:
         return 2*sum(set(nums)) - sum(nums)
 
 
+    """
+    
+    If we take XOR of zero and some bit, it will return that bit
+        a⊕0=a
+    If we take XOR of two same bits, it will return 0
+        a⊕a=0
+    a⊕b⊕a=(a⊕a)⊕b=0⊕b=b
+
+    """
+    def bit_manipulation_approach(self, nums: List[int]) -> int:
+        a = 0
+        for i in nums:
+            a ^= i
+        return a
+
+
 obj=Solution()
 print(obj.singleNumber([2,2,1]))
 
 
 
 print(obj.mathematical_approach([2,2,1]))
+
+print(obj.bit_manipulation_approach([4,1,2,1,2]))
