@@ -39,19 +39,8 @@ from typing import List
 
 class Solution:
     def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
-        word1_len = len(word1)
-        word2_len = len(word2)
-        word1_str = ""
-        word2_str = ""
-        for word in range(0, word1_len):
-            word1_str += word1[word]
-        for word in range(0, word2_len):
-            word2_str += word2[word]
-
-        if word1_str == word2_str:
-            return True
-        else:
-            return False
+        return "".join(word1) == "".join(word2)
 
 obj=Solution()
 print(obj.arrayStringsAreEqual(["a","bc","d"],["abc","d"]))
+print(obj.arrayStringsAreEqual(["a","bc","d"],["abc"]))
