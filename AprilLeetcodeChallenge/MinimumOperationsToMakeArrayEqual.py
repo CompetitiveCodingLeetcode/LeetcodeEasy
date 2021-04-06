@@ -26,6 +26,10 @@ Constraints:
 
     1 <= n <= 10^4
 
+Hint1: Build the array arr using the given formula, define target = sum(arr) / n
+
+Hint2: What is the number of operations needed to convert arr so that all elements equal target ?
+
 
 """
 
