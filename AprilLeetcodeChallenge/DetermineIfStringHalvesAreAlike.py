@@ -60,6 +60,13 @@ class Solution:
         else:
             return False
 
+    def halvesAreAlike2(self,s:str) -> bool:
+        s, n, cand = s.lower(), len(s), set("aeiou")
+        return sum(i in cand for i in s[:n // 2]) == sum(i in cand for i in s[n // 2:])
+
+
 obj=Solution()
 print(obj.halvesAreAlike("AbCdEfGh"))
 print(obj.halvesAreAlike("MerryChristmas"))
+print(obj.halvesAreAlike2("AbCdEfGh"))
+
