@@ -33,15 +33,28 @@ Constraints:
 
 """
 from typing import List
+import time
 
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         sum_val= 0
         sum_list=[]
+        start = time.time()
         for num in nums:
             sum_val+=num
             sum_list.append(sum_val)
+        end = time.time()
+        print("time taken=",end-start)#3.814697265625e-06
         return sum_list
+
+    def approach2(self,nums: List[int]) -> List[int]:
+        start = time.time()
+        for i in range(1,len(nums)):
+            nums[i] += nums[i-1]
+        end = time.time()
+        print("time taken=",end-start)#8.58306884765625e-06
+        return nums
 
 obj=Solution()
 print(obj.runningSum([3,9,1,2]))
+print(obj.approach2([3,9,1,2]))
