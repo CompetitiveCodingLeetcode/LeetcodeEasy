@@ -32,6 +32,8 @@ Constraints:
     -109 <= target <= 109
     Only one valid answer exists.
 
+Do look at TwoSumExtension in Lists folder
+
 """
 from typing import List
 
@@ -47,7 +49,7 @@ class Solution:
         return []
 
 
-nums = [2, 4, 7]
+nums = [4, 3, 7]
 target = 11
 obj = Solution()
 print(obj.twoSum(nums, target))
