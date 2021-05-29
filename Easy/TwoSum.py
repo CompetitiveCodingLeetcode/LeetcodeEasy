@@ -35,13 +35,14 @@ Constraints:
 """
 from typing import List
 
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         traced = {}
         for index, num in enumerate(nums):
             difference = target - num
             if difference in traced:
-                return index, traced[difference]
+                return list((index, traced[difference]))
             traced[num] = index
         return []
 
