@@ -1,6 +1,7 @@
 import unittest
 from typing import List
 
+
 # Time complexity=O(n^2)
 def find_max_product_bruteforce_approach(nums: List[int]) -> int:
     max_product = 0
@@ -11,6 +12,7 @@ def find_max_product_bruteforce_approach(nums: List[int]) -> int:
 
     return max_product
 
+
 # time complexity=O(nlogn)
 def find_max_product_sort_approach(nums: List[int]) -> int:
     nums.sort()
@@ -20,6 +22,32 @@ def find_max_product_sort_approach(nums: List[int]) -> int:
     if nums[len(nums) - 1] * nums[len(nums) - 2] > max_product:
         max_product = nums[len(nums) - 1] * nums[len(nums) - 2]
     return max_product
+
+
+# time complexity = O(n)
+def find_max_product_optimized_approach(nums: List[int]) -> int:
+    max_product_num1 = nums[0]
+    max_product_num2 = 0
+
+    min_product_num1 = nums[0]
+    min_product_num2 = -1
+    for i in range(1, len(nums)):
+        if nums[i] > max_product_num1 :
+            max_product_num2 = max_product_num1
+            max_product_num1 = nums[i]
+        elif nums[i] > max_product_num2:
+            max_product_num2 = nums[i]
+
+        if nums[i]<0 and abs(nums[i]) > abs(min_product_num1):
+            min_product_num2 = min_product_num1
+            min_product_num1 = nums[i]
+        elif nums[i] < 0 and abs(nums[i]) > abs(min_product_num2):
+            min_product_num2 = nums[i]
+
+    if min_product_num1 * min_product_num2 > max_product_num2 * max_product_num1:
+        return min_product_num1 * min_product_num2
+    else:
+        return max_product_num2 * max_product_num1
 
 
 class TestSolution(unittest.TestCase):
@@ -35,3 +63,8 @@ class TestSolution(unittest.TestCase):
     def test_sort_approach_negative_elements(self):
         self.assertEqual(40, find_max_product_sort_approach([1, 2, -8, -3, -5]))
 
+    def test_optimized_approach_all_positive_elements(self):
+        self.assertEqual(40, find_max_product_optimized_approach([1, 2, 8, 3, 5]))
+
+    def test_optimized_approach_negative_elements(self):
+        self.assertEqual(40, find_max_product_optimized_approach([1, 2, -8, -3, -5]))
