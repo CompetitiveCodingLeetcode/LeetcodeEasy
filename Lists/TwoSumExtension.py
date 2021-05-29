@@ -5,9 +5,7 @@ Here assume that you have to return all pairs whose sum is target
 """
 import time
 from typing import List
-from random import randint
 
-from timeit import repeat
 
 
 # Complexity: Time---O(n^2)  Space-----O(n)
