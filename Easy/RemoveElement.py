@@ -50,6 +50,7 @@ Constraints:
 
 from typing import List
 
+
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         size = len(nums)
@@ -76,5 +77,5 @@ class Solution:
         return others_idx
 
 
-obj=Solution()
-print(obj.removeElement([3,2,2,3],3))
+obj = Solution()
+print(obj.removeElement([3, 2, 2, 3], 3))
