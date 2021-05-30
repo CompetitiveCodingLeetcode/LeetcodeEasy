@@ -31,14 +31,16 @@ def find_max_product_optimized_approach(nums: List[int]) -> int:
 
     min_product_num1 = nums[0]
     min_product_num2 = -1
+
+    #if you start with  0 then last test case would fail
     for i in range(1, len(nums)):
-        if nums[i] > max_product_num1 :
+        if nums[i] > max_product_num1:
             max_product_num2 = max_product_num1
             max_product_num1 = nums[i]
         elif nums[i] > max_product_num2:
             max_product_num2 = nums[i]
 
-        if nums[i]<0 and abs(nums[i]) > abs(min_product_num1):
+        if nums[i] < 0 and abs(nums[i]) > abs(min_product_num1):
             min_product_num2 = min_product_num1
             min_product_num1 = nums[i]
         elif nums[i] < 0 and abs(nums[i]) > abs(min_product_num2):
@@ -68,3 +70,6 @@ class TestSolution(unittest.TestCase):
 
     def test_optimized_approach_negative_elements(self):
         self.assertEqual(40, find_max_product_optimized_approach([1, 2, -8, -3, -5]))
+
+    def test_optimized_approach_first_element_max(self):
+        self.assertEqual(50, find_max_product_optimized_approach([10, 2, 5, 2]))

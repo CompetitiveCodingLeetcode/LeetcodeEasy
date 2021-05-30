@@ -28,5 +28,27 @@ Constraints:
 
     2 <= nums.length <= 500
     1 <= nums[i] <= 10^3
+
 https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
 """
+from typing import List
+
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+
+        max_num1 = nums[0]
+        max_num2 = 0
+
+        for i in range(1, len(nums)):
+            if nums[i] > max_num1:
+                max_num2 = max_num1
+                max_num1 = nums[i]
+
+            elif nums[i] > max_num2:
+                max_num2 = nums[i]
+
+        return (max_num1 - 1) * (max_num2 - 1)
+
+
+obj=Solution()
+print(obj.maxProduct([10,2,5,2]))#9*4=36
