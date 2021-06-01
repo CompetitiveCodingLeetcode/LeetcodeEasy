@@ -105,6 +105,7 @@ O(n) to handle further insertions
 5. Searching a given value
 
 - Time Complexity: O(n)
+with in operator it is O(1) time complexity
 
 - Space Complexity: O(1)
 
