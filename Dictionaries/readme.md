@@ -57,7 +57,7 @@ dictionary is created which is filled with copy of references of the old diction
 for list: Linear search hence O(n) time complexity
 for dictionary: hash table hence O(1) time complexity**
 
-2. all() :
+2. all() : 
 
 3. any() :
 
@@ -65,3 +65,51 @@ for dictionary: hash table hence O(1) time complexity**
 
 
 ### Dictionary vs List:
+
+| LIST             | Dictionary                           |
+|---------------------------------------------------------|
+
+### Time and Space Complexity in python dictionary
+
+1. Creating A dictionary
+
+- Time Complexity: O(len(dict))
+
+because for each insertion the hash table calculates hash value
+
+- Space Complexity: O(n)
+
+
+2. Inserting a value in dictionary
+
+- Time Complexity: O(1)/O(n)
+
+O(1) to handle the insertion in the beginning
+
+O(n) to handle further insertions
+
+- Space Complexity: O(1)
+
+3. Traversing a given dictionary
+
+- Time Complexity: O(n)
+
+- Space Complexity: O(1)
+
+4. Accessing a given cell
+
+- Time Complexity: O(1)
+
+- Space Complexity: O(1)
+
+5. Searching a given value
+
+- Time Complexity: O(n)
+
+- Space Complexity: O(1)
+
+6. Deleting a given value
+
+- Time Complexity: O(n)
+
+- Space Complexity: O(1)
