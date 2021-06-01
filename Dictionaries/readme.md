@@ -57,9 +57,9 @@ dictionary is created which is filled with copy of references of the old diction
 for list: Linear search hence O(n) time complexity
 for dictionary: hash table hence O(1) time complexity**
 
-2. all() : 
+2. all() : returns true if all values are true and in case of empty iterable returns false
 
-3. any() :
+3. any() : returns true if only one value is true and in case of empty iterable returns true
 
 4. sorted(iterable,reverse,key) : 
 
