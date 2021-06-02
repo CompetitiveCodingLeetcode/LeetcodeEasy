@@ -18,7 +18,7 @@ class SingleLinkedList:
 
         for i in range(n):
             node = Node(i)
-            if single_linked_list_obj.head == None:
+            if single_linked_list_obj.head is None:
                 temp = node
                 single_linked_list_obj.head = temp
             else:
@@ -28,7 +28,6 @@ class SingleLinkedList:
     def traverse(self):
         temp1 = self.head
         while temp1:
-            print("Inside")
             print(temp1.val)
             temp1 = temp1.next
 
