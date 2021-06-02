@@ -31,7 +31,16 @@ class SingleLinkedList:
             print(temp1.val)
             temp1 = temp1.next
 
+    def insert_in_beginning(self,node):
+        node.next = self.head
+        self.head = node
+
+
 
 single_linked_list_obj = SingleLinkedList()
 single_linked_list_obj.create(5)
+single_linked_list_obj.traverse()
+node = Node(3)
+single_linked_list_obj.insert_in_beginning(node)
+print("traversal after insertion in beginning")
 single_linked_list_obj.traverse()
