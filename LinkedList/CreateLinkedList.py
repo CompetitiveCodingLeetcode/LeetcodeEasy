@@ -13,7 +13,7 @@ class SingleLinkedList:
     def __init__(self):
         self.head = None
 
-    def insert(self,n):
+    def create(self,n):
         temp = self.head
 
         for i in range(n):
@@ -33,5 +33,5 @@ class SingleLinkedList:
 
 
 single_linked_list_obj = SingleLinkedList()
-single_linked_list_obj.insert(5)
+single_linked_list_obj.create(5)
 single_linked_list_obj.traverse()
