@@ -99,6 +99,13 @@ class SingleLinkedList:
         prev.next = temp.next
         return temp.val
 
+    def delete_linked_list(self):
+        if self.head:
+            self.head = None
+        else:
+            print("linked list does not exist")
+
+
 single_linked_list_obj = SingleLinkedList()
 
 single_linked_list_obj.create(5)
@@ -136,4 +143,10 @@ print("loc=",loc)
 value = single_linked_list_obj.delete_node_after_given_node(loc)
 print("value deleted = ",value)
 print("traversal after deletion")
+print([node.val for node in single_linked_list_obj])
+
+print("linked list before deletion")
+print([node.val for node in single_linked_list_obj])
+single_linked_list_obj.delete_linked_list()
+print("linked list after deletion")
 print([node.val for node in single_linked_list_obj])

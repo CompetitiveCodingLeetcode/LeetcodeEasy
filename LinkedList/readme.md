@@ -16,3 +16,39 @@
 ### Linked List in Memory
 - Linked list elements are stored non-contiguously in memory.
 
+## Single Linked Lists
+
+- Deleting the entire single linked list means removing the pointers to linkedd list if a particular node has no reference the garbage collector deletes that.
+
+### Space and Time Complexity of Single Linked List
+
+1. Creation:
+
+- Time Complexity:O(1)
+- Space Complexity:O(1)
+
+2. Insertion:
+
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+
+3. Traversal:
+
+- Time Complexity:O(n)
+- Space Complexity: O(1)
+
+4. Searching:
+
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+
+5. Delete a Node:
+
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+
+6. Deleting the linked List:
+
+- Time Complexity: O(1)
+- Space Complexity: O(1)
+
