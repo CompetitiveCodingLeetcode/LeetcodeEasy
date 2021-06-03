@@ -69,8 +69,35 @@ class SingleLinkedList:
                 if temp.val == value:
                     return loc
                 loc+=1
+                temp = temp.next
             return "The element does not exist"
 
+    def delete_node_from_beginning(self):
+        if self.head is None:
+            return "Empty linked list"
+        else:
+            temp = self.head
+            self.head = self.head.next
+            return temp.val
+
+    def delete_node_from_end(self):
+        if self.head is None:
+            return "Empty linked list"
+        else:
+            temp = self.head
+            while temp.next is not None:
+                prev = temp
+                temp = temp.next
+            prev.next = None
+            return temp.val
+
+    def delete_node_after_given_node(self,loc):
+        temp = self.head
+        for i in range(loc):
+            prev = temp
+            temp = temp.next
+        prev.next = temp.next
+        return temp.val
 
 single_linked_list_obj = SingleLinkedList()
 
@@ -92,4 +119,21 @@ loc = single_linked_list_obj.search_node(3)
 print("loc=",loc)
 single_linked_list_obj.insert_after_given_node(node,loc)
 print("Insertion after a given node")
+print([node.val for node in single_linked_list_obj])
+
+value = single_linked_list_obj.delete_node_from_beginning()
+print("value deleted = ",value)
+print("traversal after deletion from beginning")
+print([node.val for node in single_linked_list_obj])
+
+value = single_linked_list_obj.delete_node_from_end()
+print("value deleted = ",value)
+print("traversal after deletion from end")
+print([node.val for node in single_linked_list_obj])
+
+loc = single_linked_list_obj.search_node(2)
+print("loc=",loc)
+value = single_linked_list_obj.delete_node_after_given_node(loc)
+print("value deleted = ",value)
+print("traversal after deletion")
 print([node.val for node in single_linked_list_obj])
