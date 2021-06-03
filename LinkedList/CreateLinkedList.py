@@ -44,16 +44,21 @@ class SingleLinkedList:
                 temp = temp.next
             temp.next = node
 
-    def insert_after_given_node(self, node, after_node):
-        temp = self.head
-        while temp.val != after_node.val:
-            temp = temp.next
-        node.next = temp.next
-        temp.next = node
+    def insert_after_given_node(self, node, loc):
+        temp_ptr = self.head
+        for i in range(loc):
+            temp_ptr = temp_ptr.next
+        node.next = temp_ptr.next
+        temp_ptr.next = node
 
-    # def search_node(self,value):
-    #     temp = self.head
-    #     while temp.val !=
+    def search_node(self,value):
+        temp = self.head
+        loc = 0
+        while temp.val != value:
+            temp = temp.next
+            loc+=1
+        return loc
+
 
 single_linked_list_obj = SingleLinkedList()
 
@@ -70,5 +75,9 @@ single_linked_list_obj.insert_in_end(node)
 print("traversal after insertion in end")
 single_linked_list_obj.traverse()
 
-
-
+node = Node(45)
+loc = single_linked_list_obj.search_node(3)
+print("loc=",loc)
+single_linked_list_obj.insert_after_given_node(node,loc)
+print("Insertion after a given node")
+single_linked_list_obj.traverse()
