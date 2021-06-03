@@ -8,16 +8,18 @@ class Node:
         self.val = val
         self.next = None
 
+
+
+class SingleLinkedList:
+    def __init__(self):
+        self.head = None
+
     def __iter__(self):
         temp = self.head
         while temp:
             yield temp
             temp = temp.next
 
-
-class SingleLinkedList:
-    def __init__(self):
-        self.head = None
 
     def create(self,n):
         temp = self.head
@@ -58,12 +60,16 @@ class SingleLinkedList:
         temp_ptr.next = node
 
     def search_node(self,value):
-        temp = self.head
-        loc = 0
-        while temp.val != value:
-            temp = temp.next
-            loc+=1
-        return loc
+        if self.head is None:
+            print("The list does not exist")
+        else:
+            temp = self.head
+            loc = 0
+            while temp:
+                if temp.val == value:
+                    return loc
+                loc+=1
+            return "The element does not exist"
 
 
 single_linked_list_obj = SingleLinkedList()
