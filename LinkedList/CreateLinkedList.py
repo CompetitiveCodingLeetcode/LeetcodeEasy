@@ -8,6 +8,12 @@ class Node:
         self.val = val
         self.next = None
 
+    def __iter__(self):
+        temp = self.head
+        while temp:
+            yield temp
+            temp = temp.next
+
 
 class SingleLinkedList:
     def __init__(self):
@@ -63,21 +69,21 @@ class SingleLinkedList:
 single_linked_list_obj = SingleLinkedList()
 
 single_linked_list_obj.create(5)
-single_linked_list_obj.traverse()
+print([node.val for node in single_linked_list_obj])
 
 node = Node(3)
 single_linked_list_obj.insert_in_beginning(node)
 print("traversal after insertion in beginning")
-single_linked_list_obj.traverse()
+print([node.val for node in single_linked_list_obj])
 
 node = Node(3)
 single_linked_list_obj.insert_in_end(node)
 print("traversal after insertion in end")
-single_linked_list_obj.traverse()
+print([node.val for node in single_linked_list_obj])
 
 node = Node(45)
 loc = single_linked_list_obj.search_node(3)
 print("loc=",loc)
 single_linked_list_obj.insert_after_given_node(node,loc)
 print("Insertion after a given node")
-single_linked_list_obj.traverse()
+print([node.val for node in single_linked_list_obj])
