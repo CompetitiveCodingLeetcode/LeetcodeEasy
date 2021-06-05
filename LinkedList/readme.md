@@ -52,3 +52,36 @@
 - Time Complexity: O(1)
 - Space Complexity: O(1)
 
+
+
+### Space and Time Complexity of Circular Single Linked List
+
+1. Creation:
+
+- Time Complexity:O(1)
+- Space Complexity:O(1)
+
+2. Insertion:
+
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+
+3. Traversal:
+
+- Time Complexity:O(n)
+- Space Complexity: O(1)
+
+4. Searching:
+
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+
+5. Delete a Node:
+
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+
+6. Deleting the linked List:
+
+- Time Complexity: O(1)
+- Space Complexity: O(1)

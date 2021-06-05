@@ -27,6 +27,10 @@ class CircularSingleLinkedList:
             self.tail = node
             node.next = self.head
 
+    def delete_linked_list(self):
+        self.head = None
+        self.tail = None
+
     def search_node(self, value):
         temp = self.head
         idx = -1
@@ -121,4 +125,5 @@ print([node.val for node in single_circular_linked_list])
 
 single_circular_linked_list.traverse_linked_list()
 
-
+single_circular_linked_list.delete_linked_list()
+print([node.val for node in single_circular_linked_list])
