@@ -130,7 +130,8 @@ print([node.val for node in circular_double_linked_list_obj])
 node = Node(13)
 loc = circular_double_linked_list_obj.search_node(2)
 print("loc=", loc)
-circular_double_linked_list_obj.insert_after_node(node, loc)
+if loc != -1:
+    circular_double_linked_list_obj.insert_after_node(node, loc)
 print([node.val for node in circular_double_linked_list_obj])
 
 circular_double_linked_list_obj.delete_node_from_beginning()
@@ -141,7 +142,8 @@ print([node.val for node in circular_double_linked_list_obj])
 
 loc = circular_double_linked_list_obj.search_node(2)
 print("loc=", loc)
-circular_double_linked_list_obj.delete_after_node(loc)
+if loc != -1:
+    circular_double_linked_list_obj.delete_after_node(loc)
 print([node.val for node in circular_double_linked_list_obj])
 
 circular_double_linked_list_obj.traverse_linked_list()
