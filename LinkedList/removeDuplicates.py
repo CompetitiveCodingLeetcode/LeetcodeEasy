@@ -1,6 +1,9 @@
 from LinkedList import LinkedList
 
 # remove duplicates in unsorted linked list
+#this approach uses a temporary buffer hence Space complexity = O(n) and time complexity is O(n)
+# if temporary buffer is not to be used then Time complexity will be O(n^2)
+
 def remove_dups(linked_list):
     temp = linked_list.head
     if temp is None:
