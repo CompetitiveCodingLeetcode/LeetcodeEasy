@@ -7,7 +7,7 @@
 ### types of Linked lists
 1. Single linked list
 2. circular single linked list
-- Eample four player chess game - to iterate through each player's chance
+- Example four player chess game - to iterate through each player's chance
 3. Double linked list
 - Example: forward and backward options for songs in playlist
 4. Circular double linked list
