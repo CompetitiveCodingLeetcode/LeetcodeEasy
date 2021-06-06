@@ -29,7 +29,7 @@ def find_kth_element_from_end_approach2(linked_list, k):
 
 
 customList = LinkedList()
-customList.generate_list(12, 0, 99)
+customList.generate_list(13, 0, 99)
 print(customList)
 print(find_kth_element_from_end_approach1(customList, 3))
 print(find_kth_element_from_end_approach2(customList, 3))
