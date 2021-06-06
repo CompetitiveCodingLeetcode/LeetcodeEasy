@@ -116,5 +116,8 @@
 
 6. Deleting the linked List:
 
-- Time Complexity: O(1)
+- Time Complexity: O(n)
+  
+because if we make head reference to null still each node contains a reference in terms of the prev pointer
+
 - Space Complexity: O(1)

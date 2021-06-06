@@ -87,6 +87,10 @@ class DoubleLinkedList:
         temp.next.prev = prev_node
 
     def delete_linked_list(self):
+        temp = self.head
+        while temp:
+            temp.prev = None
+            temp = temp.next
         self.head = None
 
     def traverse_linked_list(self):

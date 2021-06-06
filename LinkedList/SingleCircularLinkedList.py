@@ -44,29 +44,28 @@ class CircularSingleLinkedList:
         if idx == -1:
             return idx
 
-    def insert_in_beginning(self,node):
+    def insert_in_beginning(self, node):
         node.next = self.head
         self.tail.next = node
         self.head = node
 
-    def insert_in_end(self,node):
+    def insert_in_end(self, node):
         self.tail.next = node
         node.next = self.head
         self.tail = node
 
-    def insert_after_given_node(self,loc,node):
+    def insert_after_given_node(self, loc, node):
         temp = self.head
         for i in range(loc):
             temp = temp.next
         node.next = temp.next
         temp.next = node
 
-
     def delete_node_from_beginning(self):
         temp = self.head
         self.head = temp.next
         self.tail.next = self.head
-        print("deleted node value = ",temp.val)
+        print("deleted node value = ", temp.val)
 
     def delete_node_from_end(self):
         temp = self.head
@@ -74,43 +73,48 @@ class CircularSingleLinkedList:
             if temp.next == self.tail:
                 break
             temp = temp.next
-        print("deleted node value=",self.tail.val)
+        print("deleted node value=", self.tail.val)
         temp.next = self.head
         self.tail = temp
 
     def delete_node_after_node(self, loc):
         temp = self.head
-        for i in range(loc-1):
+        for i in range(loc - 1):
             temp = temp.next
         node = temp.next
-        print("node to be deleted=",node.val)
+        print("node to be deleted=", node.val)
         temp.next = node.next
 
     def traverse_linked_list(self):
         temp = self.head
         while temp:
-            print(temp.val,end=" ")
+            print(temp.val, end=" ")
             temp = temp.next
             if temp == self.tail.next:
                 break
 
+
 single_circular_linked_list = CircularSingleLinkedList()
+
 print([node.val for node in single_circular_linked_list])
 single_circular_linked_list.create_linked_list(5)
 print([node.val for node in single_circular_linked_list])
 
-node=Node(12)
+node = Node(12)
 single_circular_linked_list.insert_in_beginning(node)
 print([node.val for node in single_circular_linked_list])
 
-node=Node(13)
+node = Node(13)
 single_circular_linked_list.insert_in_end(node)
 print([node.val for node in single_circular_linked_list])
 
-loc = single_circular_linked_list.search_node(4)
-print("loc=",loc)
-node=Node(14)
-single_circular_linked_list.insert_after_given_node(loc,node)
+loc = single_circular_linked_list.search_node(3)
+print("loc=", loc)
+node = Node(14)
+try:
+    single_circular_linked_list.insert_after_given_node(loc, node)
+except TypeError:
+    print("Value not found in linked list")
 print([node.val for node in single_circular_linked_list])
 
 single_circular_linked_list.delete_node_from_beginning()
@@ -119,8 +123,12 @@ print([node.val for node in single_circular_linked_list])
 single_circular_linked_list.delete_node_from_end()
 print([node.val for node in single_circular_linked_list])
 
-loc=single_circular_linked_list.search_node(14)
-single_circular_linked_list.delete_node_after_node(loc)
+loc = single_circular_linked_list.search_node(14)
+print("loc=", loc)
+try:
+    single_circular_linked_list.delete_node_after_node(loc)
+except TypeError:
+    print("Value to be deleted not found in the list")
 print([node.val for node in single_circular_linked_list])
 
 single_circular_linked_list.traverse_linked_list()
