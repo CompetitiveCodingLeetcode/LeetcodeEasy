@@ -13,4 +13,6 @@ def fibonacci(n):
     # fibonacci_store[n] = value
     return value
 
-print(fibonacci(4))
+n=4
+for i in range(1,n+1):
+    print(fibonacci(i))
