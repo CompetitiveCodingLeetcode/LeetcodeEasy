@@ -18,8 +18,9 @@ output: false
 """
 import unittest
 
+
 # this approach fails for test_check_string_list_with_duplicates_fail()
-def check_valid_permutation(list1,list2) -> bool:
+def check_valid_permutation(list1, list2) -> bool:
     list1_len, list2_len = len(list1), len(list2)
 
     if list1_len != list2_len:
@@ -30,14 +31,15 @@ def check_valid_permutation(list1,list2) -> bool:
                 return False
         return True
 
-def check_valid_permutation_optimized(list1,list2)-> bool:
+
+def check_valid_permutation_optimized(list1, list2) -> bool:
     list1_len, list2_len = len(list1), len(list2)
     elements_map = {}
 
     if list1_len != list2_len:
         return False
     else:
-        for i in range(0,list1_len):
+        for i in range(0, list1_len):
             if list1[i] in elements_map:
                 elements_map[list1[i]] += 1
             else:
@@ -52,35 +54,34 @@ def check_valid_permutation_optimized(list1,list2)-> bool:
     return True
 
 
-
-
 class TestSolution(unittest.TestCase):
     def test_check_number_list(self):
-        self.assertTrue(check_valid_permutation([1,2,3],[1,3,2]))
+        self.assertTrue(check_valid_permutation([1, 2, 3], [1, 3, 2]))
 
     def test_check_string_list(self):
-        self.assertTrue(check_valid_permutation(['a','c','b'],['a','b','c']))
+        self.assertTrue(check_valid_permutation(['a', 'c', 'b'], ['a', 'b', 'c']))
 
     def test_check_string_list_fail(self):
-        self.assertFalse(check_valid_permutation(['a','c','b'],['a','a','a']))
+        self.assertFalse(check_valid_permutation(['a', 'c', 'b'], ['a', 'a', 'a']))
 
     def test_check_number_list_fail(self):
-        self.assertFalse(check_valid_permutation([1,2,3],[1,2,3,4]))
+        self.assertFalse(check_valid_permutation([1, 2, 3], [1, 2, 3, 4]))
 
     def test_check_string_list_with_duplicates_fail(self):
-        self.assertFalse(check_valid_permutation(['a','c','b','a','d','b'],['a','c','c','b','d','d']))
+        self.assertFalse(check_valid_permutation(['a', 'c', 'b', 'a', 'd', 'b'], ['a', 'c', 'c', 'b', 'd', 'd']))
 
     def test_check_number_list2(self):
-        self.assertTrue(check_valid_permutation_optimized([1,2,3],[1,3,2]))
+        self.assertTrue(check_valid_permutation_optimized([1, 2, 3], [1, 3, 2]))
 
     def test_check_string_list2(self):
-        self.assertTrue(check_valid_permutation_optimized(['a','c','b'],['a','b','c']))
+        self.assertTrue(check_valid_permutation_optimized(['a', 'c', 'b'], ['a', 'b', 'c']))
 
     def test_check_string_list_fail2(self):
-        self.assertFalse(check_valid_permutation_optimized(['a','c','b'],['a','a','a']))
+        self.assertFalse(check_valid_permutation_optimized(['a', 'c', 'b'], ['a', 'a', 'a']))
 
     def test_check_number_list_fail2(self):
-        self.assertFalse(check_valid_permutation_optimized([1,2,3],[1,2,3,4]))
+        self.assertFalse(check_valid_permutation_optimized([1, 2, 3], [1, 2, 3, 4]))
 
     def test_check_string_list_with_duplicates_fail2(self):
-        self.assertFalse(check_valid_permutation_optimized(['a','c','b','a','d','b'],['a','c','c','b','d','d']))
+        self.assertFalse(
+            check_valid_permutation_optimized(['a', 'c', 'b', 'a', 'd', 'b'], ['a', 'c', 'c', 'b', 'd', 'd']))
