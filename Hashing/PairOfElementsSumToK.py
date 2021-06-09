@@ -4,7 +4,8 @@ Find the pair of elements one from each list that sum to k.
 
 """
 
-def pair_of_elements(list1,list2,k):
+
+def pair_of_elements(list1, list2, k):
     list1_len = len(list1)
     list2_len = len(list2)
     temp_map = {}
@@ -30,4 +31,4 @@ def pair_of_elements(list1,list2,k):
         return False
 
 
-print(pair_of_elements([1,2,3,4,4,7,9],[2,3,4,5,6],15))
+print(pair_of_elements([1, 2, 3, 4, 4, 7, 9], [2, 3, 4, 5, 6], 15))
