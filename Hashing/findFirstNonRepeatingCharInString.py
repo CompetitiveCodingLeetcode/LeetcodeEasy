@@ -15,4 +15,5 @@ def find_first_non_repeating_char(input):
         if value == 1:
             return item_key
 
+
 print(find_first_non_repeating_char("aabbffgghoo"))
