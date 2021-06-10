@@ -1,14 +1,20 @@
 import unittest
 
-
+# without swapped complexity is O(n^2)
 def bubble_sort(input_list):
     input_list_len = len(input_list)
+    swapped = 0
     for i in range(input_list_len):
         for j in range(input_list_len - i - 1):
             if input_list[j + 1] < input_list[j]:
+                swapped = 1
                 temp = input_list[j]
                 input_list[j] = input_list[j + 1]
                 input_list[j + 1] = temp
+        #added for O(n) complexity for best case
+        if swapped == 0:
+            print("one iteration")
+            return input_list
     return input_list
 
 
