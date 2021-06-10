@@ -14,4 +14,8 @@ The following link contains the possible ways to do customized sorting using sor
 
 - insertion has better performance than bubble sort
 - Advantage: It can detect whether the list is already sorted or not.
+- Worst case time complexity: O(n^2)
+- Average case time complexity: O(n^2)
+- Best case time complexity: O(n)
+- Worst case space complexity: O(1)
 
