@@ -18,6 +18,7 @@ The following link contains the possible ways to do customized sorting using sor
 - Average case time complexity: O(n^2)
 - Best case time complexity: O(n)
 - Worst case space complexity: O(1)
+- The adjacent elements are compared and after each pass the smaller element starts coming up slowly like a bubble
 
 ## SELECTION SORT
 
@@ -28,4 +29,14 @@ The following link contains the possible ways to do customized sorting using sor
 - Average case time complexity: O(n^2)
 - Best case time complexity: O(n^2)
 - Worst case space complexity: O(1)
+- Select the least element in the remaining array and swap with current element.
+
+## INSERTION SORT
+
+- suitable for small data
+- in k iterations k+1 elements are sorted
+- in place sorting
+- Stable sorting technique  
+- in case of partially pre sorted list the complexity becomes O(n+d) where d is the number of inversions (Adaptive)
+- Online : can sort list as it receives
 
