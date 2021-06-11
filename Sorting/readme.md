@@ -19,3 +19,13 @@ The following link contains the possible ways to do customized sorting using sor
 - Best case time complexity: O(n)
 - Worst case space complexity: O(1)
 
+## SELECTION SORT
+
+- works well for sorting small files
+- It is suitable for sorting large files with small keys because sorting is done based on keys  
+- Advantage: In place sorting.
+- Worst case time complexity: O(n^2)
+- Average case time complexity: O(n^2)
+- Best case time complexity: O(n^2)
+- Worst case space complexity: O(1)
+
