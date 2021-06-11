@@ -1,11 +1,16 @@
+def swap(i,least,input_list):
+    temp = input_list[i]
+    input_list[i] = input_list[least]
+    input_list[least] = temp
+
 def selection_sort(input_list):
     input_list_len = len(input_list)
-    for i in range(input_list_len - 1):
+    for i in range(input_list_len):
+        least = i
         for j in range(i + 1, input_list_len):
-            if input_list[j] < input_list[i]:
-                temp = input_list[i]
-                input_list[i] = input_list[j]
-                input_list[j] = temp
+            if input_list[j] < input_list[least]:
+                least = j
+        swap(i,least,input_list)
 
     return input_list
 
