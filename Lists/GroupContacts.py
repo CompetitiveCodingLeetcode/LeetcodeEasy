@@ -30,5 +30,4 @@ def group_contacts(input_list):
     return ans_list
 
 
-
 print(group_contacts([('abc', 9987), ('xyz', 9986), ('dfg', 9987)]))
