@@ -8,6 +8,7 @@ o/p -- 5 -> 4 -> 3 -> 2 -> 1
 from LinkedList import LinkedList
 
 
+#Time complexity - O(n) Space Complexity - O(n)
 def reverse_linked_list(input_ll):
     stack_ll = []
     sptr = input_ll.head
