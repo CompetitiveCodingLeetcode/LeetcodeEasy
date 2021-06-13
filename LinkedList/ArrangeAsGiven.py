@@ -60,8 +60,34 @@ def arrange_linked_list(input_ll):
         new_LL.head = None
 
 
+def arrange_linked_list_using_dequeue(input_ll):
+    ll_dequeue = []
+    temp = input_ll.head
+
+    while temp:
+        ll_dequeue.append(temp.val)
+        temp = temp.next
+
+    i=0
+    temp = input_ll.head
+    while len(ll_dequeue) > 0:
+        if i % 2 == 0:
+            temp.val = ll_dequeue[0]
+            ll_dequeue.pop(0)
+        else:
+            temp.val = ll_dequeue[-1]
+            ll_dequeue.pop()
+
+        i += 1
+        temp = temp.next
+
+
 customLL = LinkedList()
-customLL.generate_list(15, 0, 99)
+# customLL.generate_list(15, 0, 99)
+# print(customLL)
+# arrange_linked_list(customLL)
+# print(customLL)
+customLL.generate_list(6, 0, 99)
 print(customLL)
-arrange_linked_list(customLL)
+arrange_linked_list_using_dequeue(customLL)
 print(customLL)
