@@ -9,7 +9,7 @@ from LinkedList import LinkedList
 
 
 #Time complexity - O(n) Space Complexity - O(n)
-def reverse_linked_list(input_ll):
+def reverse_linked_list_stack_approach(input_ll):
     stack_ll = []
     sptr = input_ll.head
     fptr = input_ll.head
@@ -22,8 +22,23 @@ def reverse_linked_list(input_ll):
         fptr = fptr.next
 
 
+# Time Complexity - O(n) Space Complexity - O(1)
+def reverse_linked_list_optimized_approach(input_ll):
+    current = input_ll.head
+    last = None
+    next_ptr = input_ll.head
+    while current is not None:
+        next_ptr = current.next
+        current.next = last
+        last = current
+        current = next_ptr
+    input_ll.head = last
+
+
 customLL = LinkedList()
 customLL.generate_list(12, 0, 99)
 print(customLL)
-reverse_linked_list(customLL)
+reverse_linked_list_stack_approach(customLL)
+print(customLL)
+reverse_linked_list_optimized_approach(customLL)
 print(customLL)
