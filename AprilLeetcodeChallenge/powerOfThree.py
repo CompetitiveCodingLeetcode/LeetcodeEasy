@@ -1,0 +1,4 @@
+"""
+
+calculate power of three
+"""

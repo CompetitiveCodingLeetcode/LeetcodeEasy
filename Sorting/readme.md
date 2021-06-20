@@ -39,4 +39,9 @@ The following link contains the possible ways to do customized sorting using sor
 - Stable sorting technique  
 - in case of partially pre sorted list the complexity becomes O(n+d) where d is the number of inversions (Adaptive)
 - Online : can sort list as it receives
+- Worst case time complexity: O(n^2)
+- Average case time complexity: O(n^2)
+- Best case time complexity: O(n^2)
+- Worst case space complexity: O(n^2) total, O(1) in auxilary
 
+## 

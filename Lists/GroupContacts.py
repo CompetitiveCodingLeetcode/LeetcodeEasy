@@ -8,6 +8,9 @@ Output:{{{abc ,9987},{abc ,9987}},{{xyz,9986}}}
 
 Union Find Algorithm or Depth First search Algorithm was applicable
 
+
+**** https://www.geeksforgeeks.org/find-same-contacts-in-a-list-of-contacts/
+use this link and understand the concept of dfs and bfs and use it
 """
 
 

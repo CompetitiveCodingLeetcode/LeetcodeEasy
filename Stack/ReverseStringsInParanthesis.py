@@ -5,6 +5,7 @@ output: camping
 
 """
 
+
 def reverse_strings_in_parentheses(input_str):
     stack_str = []
     input_str_len = len(input_str)
@@ -22,6 +23,7 @@ def reverse_strings_in_parentheses(input_str):
             result += ch
 
     return result
+
 
 print(reverse_strings_in_parentheses("((ng)ipm(ca))"))
 print(reverse_strings_in_parentheses("ab(cd)"))

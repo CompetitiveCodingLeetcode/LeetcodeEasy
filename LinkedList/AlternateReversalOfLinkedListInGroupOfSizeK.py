@@ -42,6 +42,7 @@ def set_values_for_linked_list(input_LL, k):
             count += 1
         count = 0
 
+#TODO: write other approach using stack
 
 customLL = LinkedList()
 customLL.generate_list(12, 0, 99)
