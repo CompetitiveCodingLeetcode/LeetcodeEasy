@@ -33,3 +33,30 @@
   
     
   ![Screenshot from 2021-06-20 21-28-57](https://user-images.githubusercontent.com/41982971/122680934-738e9a80-d20f-11eb-864a-0ebb77731a31.png)
+
+#### Python List Representation
+- to make mathematical calculations easier we are assuming that we will not fill the cells at 0 location
+- if x is the index of the current node:
+   - left node will be at 2x index
+   - right node will be at 2x+1 index
+  
+### Complexities for Binary Tree Operations
+
+1. Creation pf Binary Tree
+- Time Complexity: O(1)
+- Space Complexity: O(1)
+
+2. Traversals 
+- Depth First search
+  - Pre Order Traversal
+    - Time Complexity: O(n) because O(n/2)+O(n/2)
+    - Space Complexity: O(n) because we are using stack memory
+  - In order Traversal
+    - Time Complexity: O(n) because O(n/2)+O(n/2)
+    - Space Complexity: O(n) because we are using stack memory
+  - Post Order Traversal
+    - Time Complexity: O(n) because O(n/2)+O(n/2)
+    - Space Complexity: O(n) because we are using stack memory
+- Breadth First Search
+  - Level Order Traversal
+    
