@@ -36,4 +36,27 @@
    - Time Complexity - O(1)
    - Space Complexity - O(1)   
 
+### Time and Space complexity for Queue with capacity
+1. Create Queue
+   - Time Complexity - O(1)
+   - Space Complexity - O(n) because all the n elements are filled as None. 
+2. Enqueue
+   - Time Complexity - O(1)
+   - Space Complexity - O(1)
+3. Dequeue
+   - Time Complexity - O(1)
+   - Space Complexity - O(1)
+4. Peek
+   - Time Complexity - O(1)
+   - Space Complexity - O(1)
+5. isEmpty
+   - Time Complexity - O(1)
+   - Space Complexity - O(1)
+6. Delete Entire Queue
+   - Time Complexity - O(1)
+   - Space Complexity - O(1)
+7. isFull
+   - Time Complexity - O(1)
+   - Space Complexity - O(1)
+
    
