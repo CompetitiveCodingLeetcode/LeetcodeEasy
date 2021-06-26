@@ -92,6 +92,22 @@
    - append() - add elements to the end of the queue 
    - popleft() - remove first element from the queue
    - clear() - delete all elements from the queue
-   
+
+2. Queue module
+- It is useful in threaded programming where information must be safely exchanged between multiple threads
+- This module implements three type of queue:
+   - FIFO
+   - LIFO(Stack)
+   - Priority Queue
+- FIFO:
+    - Methods used:
+        - Queue(maxsize=0) - if maxsize is 0 then the size of the queue will be infinite and if a number is specified then that will be the size of the queue
+        - qsize() - returns the size of the queue
+        - empty() - returns True if the queue is empty else false
+        - full() - returns true if the size of queue is reached
+        - put() - append element at the end of the queue
+        - get() - remove element from the start of the queue
+        - task_done() - not understood
+        - join() - not understood
 
    
