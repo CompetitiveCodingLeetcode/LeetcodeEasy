@@ -110,4 +110,8 @@
         - task_done() - not understood
         - join() - not understood
 
+3. multiprocessing module
+- allows two items to be processed in parallel by multiple concurrent workers
+- multiprocessing queue is meant for sharing data between processes and can store nay packable objects.
+- It uses same methods as Queue module
    
