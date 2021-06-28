@@ -29,6 +29,7 @@ Constraints:
 
 """
 
+
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         s_len = len(s)
@@ -39,10 +40,10 @@ class Solution:
             e_ind = 1
             while len(s) and s_ind != e_ind:
                 if s[s_ind] == s[e_ind]:
-                    if e_ind == len(s)-1:
+                    if e_ind == len(s) - 1:
                         temp = s[0:s_ind]
                     else:
-                        temp = s[0:s_ind] + s[e_ind+1:]
+                        temp = s[0:s_ind] + s[e_ind + 1:]
                     s = temp
                     if len(s) == 1:
                         break
@@ -50,22 +51,21 @@ class Solution:
                         s_ind = s_ind - 1
                         e_ind = s_ind + 1
                     else:
-                            s_ind = 0
-                            e_ind = s_ind + 1
+                        s_ind = 0
+                        e_ind = s_ind + 1
                 else:
                     s_ind = e_ind
-                    if e_ind != len(s) -1:
+                    if e_ind != len(s) - 1:
                         e_ind += 1
                 if e_ind == len(s):
                     break
             return s
 
-
-    def removeDuplicatesStackApproach(self,s):
+    def removeDuplicatesStackApproach(self, s):
         ans = ""
         for i in range(len(s)):
             if ans == "" or ans[-1] != s[i]:
-                ans+=s[i]
+                ans += s[i]
             else:
                 ans = ans[:-1]
         return ans
@@ -81,10 +81,3 @@ print(obj.removeDuplicatesStackApproach("aab"))
 print(obj.removeDuplicatesStackApproach("aabc"))
 print(obj.removeDuplicatesStackApproach("baa"))
 print(obj.removeDuplicatesStackApproach("bcaa"))
-
-
-
-
-
-
-
