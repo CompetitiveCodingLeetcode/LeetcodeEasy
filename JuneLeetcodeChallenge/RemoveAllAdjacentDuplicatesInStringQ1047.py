@@ -61,16 +61,26 @@ class Solution:
             return s
 
 
+    def removeDuplicatesStackApproach(self,s):
+        ans = ""
+        for i in range(len(s)):
+            if ans == "" or ans[-1] != s[i]:
+                ans+=s[i]
+            else:
+                ans = ans[:-1]
+        return ans
+
+
 obj = Solution()
-print(obj.removeDuplicates("abbaca"))
-print(obj.removeDuplicates("azxxzy"))
-print(obj.removeDuplicates("aa"))
-print(obj.removeDuplicates("a"))
-print(obj.removeDuplicates("aaaaaaaa"))
-print(obj.removeDuplicates("aab"))
-print(obj.removeDuplicates("aabc"))
-print(obj.removeDuplicates("baa"))
-print(obj.removeDuplicates("bcaa"))
+print(obj.removeDuplicatesStackApproach("abbaca"))
+print(obj.removeDuplicatesStackApproach("azxxzy"))
+print(obj.removeDuplicatesStackApproach("aa"))
+print(obj.removeDuplicatesStackApproach("a"))
+print(obj.removeDuplicatesStackApproach("aaaaaaaa"))
+print(obj.removeDuplicatesStackApproach("aab"))
+print(obj.removeDuplicatesStackApproach("aabc"))
+print(obj.removeDuplicatesStackApproach("baa"))
+print(obj.removeDuplicatesStackApproach("bcaa"))
 
 
 
