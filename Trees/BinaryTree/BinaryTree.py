@@ -35,5 +35,6 @@ print()
 postorder_traversal(newBT)
 print()
 inorder_traversal(newBT)
+print()
 print(BFSTraversal(newBT))
 
