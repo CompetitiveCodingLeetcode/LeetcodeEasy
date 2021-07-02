@@ -37,6 +37,9 @@
 - Direct Chaining
   - implements buckets as linked list
   - colliding elements are stored in linked lists
+
+![Screenshot from 2021-07-02 18-39-56](https://user-images.githubusercontent.com/41982971/124286313-702ed380-db6c-11eb-8925-0437e9c8f2de.png)
+
 - Open Addressing
   - Linear Probing
   - Quadratic Probing
