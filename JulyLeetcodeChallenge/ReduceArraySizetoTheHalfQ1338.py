@@ -43,29 +43,41 @@ Constraints:
     1 <= arr[i] <= 10^5
 
 """
+import collections
 from typing import List
 import unittest
+from collections import Counter
 
 
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
         arr_len = len(arr)
-        arr_elements_count = {}
-        for i in range(arr_len):
-            if arr[i] in arr_elements_count:
-                arr_elements_count[arr[i]] += 1
-            else:
-                arr_elements_count[arr[i]] = 1
+        c = collections.Counter(arr)
+        c = sorted(c.values())
 
-        sorted_arr_elements_count = dict(sorted(arr_elements_count.items(), key=lambda x: x[1], reverse=True))
-        min_set_size = 0
-        count_sum = 0
-        for i in sorted_arr_elements_count.items():
-            count_sum += i[1]
-            min_set_size += 1
-            if count_sum >= arr_len / 2:
-                break
-        return min_set_size
+        count = 0
+        size = 0
+
+        while count < arr_len / 2:
+            size += 1
+            v = c.pop()
+            count += v
+        return size
+        # for i in range(arr_len):
+        #     if arr[i] in arr_elements_count:
+        #         arr_elements_count[arr[i]] += 1
+        #     else:
+        #         arr_elements_count[arr[i]] = 1
+        #
+        # sorted_arr_elements_count = dict(sorted(arr_elements_count.items(), key=lambda x: x[1], reverse=True))
+        # min_set_size = 0
+        # count_sum = 0
+        # for i in sorted_arr_elements_count.items():
+        #     count_sum += i[1]
+        #     min_set_size += 1
+        #     if count_sum >= arr_len / 2:
+        #         break
+        # return min_set_size
 
 
 class TestSolution(unittest.TestCase):
