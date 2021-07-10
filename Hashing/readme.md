@@ -48,6 +48,7 @@
   
   - Double Hashing: interval between probes is calculated by another hashing function
     
+    ![Screenshot from 2021-07-10 08-33-36](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2008-33-36.png)
   
 
 
