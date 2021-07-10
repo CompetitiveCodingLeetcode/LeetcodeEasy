@@ -43,6 +43,9 @@
 - Open Addressing : colliding elements are stored in other vacant buckets. During storage and lookup these are found through so called probing.
   - Linear Probing: It places new key into closest following empty cell.
   - Quadratic Probing: adding arbitrary quadratic polynomial to the index until an empty cell is found
+  
+  ![Screenshot from 2021-07-10 08-29-57](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2008-29-57.png)
+  
   - Double Hashing: interval between probes is calculated by another hashing function
     
   
