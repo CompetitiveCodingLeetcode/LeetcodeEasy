@@ -73,6 +73,8 @@
 
 ### Pros and Cons of hashing
 - on an average insertion/deletion/search operations take O(1) time complexity (using good hash function)
+![](
 - when hash function is not good enough then insertion/deletion/search operations take O(n) time complexity
+![](
 
       
