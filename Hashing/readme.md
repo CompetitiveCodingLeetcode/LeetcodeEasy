@@ -51,6 +51,15 @@
     ![Screenshot from 2021-07-10 08-33-36](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2008-33-36.png)
   
 
+### Hash Table is Full
+
+- Direct chaining : this case will not arise
+- Open Addressing: create a hash table of 2X size and re calculate hash values for all the keys
+   - this is time consuming because the hash function is called again for all the keys hence if n keys then O(n) time complexity.
+    
+### Pros and Cons of Collision techniques:
+
+- 
 
 
 
