@@ -40,10 +40,11 @@
 
 ![Screenshot from 2021-07-02 18-39-56](https://user-images.githubusercontent.com/41982971/124286313-702ed380-db6c-11eb-8925-0437e9c8f2de.png)
 
-- Open Addressing
-  - Linear Probing
-  - Quadratic Probing
-  - Double Hashing
+- Open Addressing : colliding elements are stored in other vacant buckets. During storage and lookup these are found through so called probing.
+  - Linear Probing: It places new key into closest following empty cell.
+  - Quadratic Probing: adding arbitrary quadratic polynomial to the index until an empty cell is found
+  - Double Hashing: interval between probes is calculated by another hashing function
+    
   
 
 
