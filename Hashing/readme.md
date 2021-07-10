@@ -59,7 +59,8 @@
     
 ### Pros and Cons of Collision techniques:
 
-- 
+![Screenshot from 2021-07-10 08-59-34](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2008-59-34.png)
+
 
 
 
