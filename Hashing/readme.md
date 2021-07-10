@@ -75,6 +75,6 @@
 - on an average insertion/deletion/search operations take O(1) time complexity (using good hash function)
 ![](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2013-23-25.png)
 - when hash function is not good enough then insertion/deletion/search operations take O(n) time complexity
-![](
+![](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2013-28-00.png)
 
       
