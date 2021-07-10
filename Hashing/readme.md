@@ -70,10 +70,11 @@
     - when we input or passwords there are 2 cases either we store the passwords as it s or we pass the passwords through a hash function and store the hash value of the password. In the first case the hackers can easily get the passwords by hacking the servers.
 2. File system:
     -  File path is mapped to physical location on disk using hash functions.
+ ![](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2013-23-25.png)
+
 
 ### Pros and Cons of hashing
 - on an average insertion/deletion/search operations take O(1) time complexity (using good hash function)
-![](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2013-23-25.png)
 - when hash function is not good enough then insertion/deletion/search operations take O(n) time complexity
 ![](https://github.com/CompetitiveCodingLeetcode/LeetcodeEasy/blob/main/Hashing/images/Screenshot%20from%202021-07-10%2013-28-00.png)
 
