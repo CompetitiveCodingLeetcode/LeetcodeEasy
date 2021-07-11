@@ -8,3 +8,9 @@ use "".join(<list_variable_name>)
 use list(<tuple_variable>)
 #### Note: list takes only one argument hence store tuple in a variable
 
+### for assigning max and min values of int to a variable
+import sys
+
+MAX_VAL = sys.maxint
+
+MIN_VAL = sys.minint
