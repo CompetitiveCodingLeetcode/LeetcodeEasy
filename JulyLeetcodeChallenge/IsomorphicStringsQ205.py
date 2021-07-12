@@ -70,3 +70,6 @@ class TestSolution(unittest.TestCase):
 
     def test_edge_case(self):
         self.assertFalse(Solution().isIsomorphic("badc", "baba"))
+
+
+# Approach: maping from s to t and mapping from t to s is done simultaneously. Also if the char is not in mapping then add in dictionary else check if its value is not equal to other string's char then return False.
