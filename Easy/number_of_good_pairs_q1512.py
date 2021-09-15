@@ -43,6 +43,22 @@ class Solution:
                     count += 1
         return count
 
+    def numIdenticalPairsOnePass(self, nums: List[int]) -> int:
+        count_num = {}
+        count = 0
+        for num in nums:
+            if num in count_num:
+                count_num[num] += 1
+            else:
+                count_num[num] = 1
+
+        for item in count_num.keys():
+            if count_num[item] > 1:
+                count += (count_num[item]*(count_num[item] - 1))/2
+
+        return count
+        
+
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
         self.obj=Solution()
@@ -58,3 +74,15 @@ class TestSolution(unittest.TestCase):
 
     def test_numIdenticalPairs4(self):
         self.assertEqual(self.obj.numIdenticalPairs([1,1,1,1]),6)
+
+    def test_numIdenticalPairsOnePass1(self):
+        self.assertEqual(self.obj.numIdenticalPairsOnePass([1,2,3,1]),1)
+
+    def test_numIdenticalPairsOnePass2(self):
+        self.assertEqual(self.obj.numIdenticalPairsOnePass([1,2,3,4]),0)
+
+    def test_numIdenticalPairsOnePass3(self):
+        self.assertEqual(self.obj.numIdenticalPairsOnePass([1,2,3,1,1,3]),4)
+
+    def test_numIdenticalPairsOnePass4(self):
+        self.assertEqual(self.obj.numIdenticalPairsOnePass([1,1,1,1]),6)
