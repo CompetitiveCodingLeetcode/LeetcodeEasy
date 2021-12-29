@@ -44,16 +44,11 @@ class Solution:
 
         mask = 0
         num = n
-        count_of_ones = 0
         if n == 0:
             return 1
         while num != 0:
+            mask = (mask << 1) | 1
             num = num >> 1
-            count_of_ones += 1
-        while count_of_ones != 0:
-            mask = mask << 1
-            mask = mask | 1
-            count_of_ones -= 1
 
         return (~n & mask)
 
