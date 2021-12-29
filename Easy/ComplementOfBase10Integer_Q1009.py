@@ -72,3 +72,26 @@ class TestSolution(unittest.TestCase):
 
     def test_case_3(self):
         self.assertEqual(self.obj.bitwiseComplement(10),5)
+
+
+"""
+Approach used: let us take 5 as example:
+binary representation for 5 = 0000000000.....000101(32 bit)
+expected output: 0000000000000000000000......000010(32 bit)
+if we negate 5: 1111111111111................111010(32 bit)
+what we need is basically in the output for negation of 5 all the 1s should be 0 except the last 3 digits because actual binary representation also hast last 3 bits that make the value.
+so there are two things:
+i) find the number of digits that are important to us(here 3 digits)
+ii) make rest of the digits as 0
+the above two steps are for finding the mask as : ~num & mask = answer
+
+let mask = 0 initially
+to find the number of digits:
+right shift the number by 1 and keep counting
+
+iterate number of times you received the count above by right shifting:
+left shift mask(initially assigned to 0) by 1 and then OR with 1
+
+the above gives the correct mask and then the result can be found using:
+~(num) & mask
+"""
