@@ -1,5 +1,5 @@
 ### link for how dictionary is mapped in memory
-https://thoughtworks.udemy.com/course/data-structures-and-algorithms-bootcamp-in-python/learn/lecture/19179352#overview
+https://udemy.com/course/data-structures-and-algorithms-bootcamp-in-python/learn/lecture/19179352#overview
 
 ### Major Functions used to orate with dictionaries
 1. clear all elements of a dictionary
