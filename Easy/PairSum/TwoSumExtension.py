@@ -62,5 +62,6 @@ def TwoSumExtensionApproach2(nums: List[int], target: int) -> List[List[int]]:
 
 
 print(TwoSumExtensionApproach2([1, 2, 3, 2, 3, 4, 5, 6], 6))
+print(TwoSumExtensionApproach2([2,-3,3,3,-2],0))
 print(TwoSumExtension([1, 2, 3, 2, 3, 4, 5, 6], 6))
 # Complexity: Time---O(n^2)  Space-----O(n)
