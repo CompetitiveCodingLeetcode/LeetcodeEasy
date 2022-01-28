@@ -6,7 +6,10 @@ def binary_search(arr: List[int], target: int) -> int:
     low = 0
     high = len(arr) - 1
     while low <= high:
-        mid = int((low + high) / 2)
+        # this will give integer overflow in case of low and high both bein 2^31 -1 then in that case when low and high are added the value becomes more than max val of int
+        # mid = int((low + high) / 2)
+        # to solve integer overflow error we can use:
+        mid = low + int((high-low)/2)
         if arr[mid] < target:
             low = mid + 1
         elif arr[mid] > target:
