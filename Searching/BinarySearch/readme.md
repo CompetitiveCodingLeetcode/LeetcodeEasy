@@ -6,3 +6,5 @@
 
 - find first and last occurrence of a number in a list
 - find the number of occurrences of a key
+- peak index in a mountain array (leetcode)
+- 
