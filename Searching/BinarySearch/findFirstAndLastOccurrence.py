@@ -9,11 +9,8 @@ def findFirstOccurrence(arr: List[int],n: int,key: int) -> int:
     firstOccurrence = -1
     while low<= high:
         if arr[mid] == key:
-            if arr[mid-1] == key:
                 high = mid-1
-            else:
                 firstOccurrence = mid
-                break
         elif arr[mid]>key:
             high = mid-1
         else:
@@ -29,11 +26,8 @@ def findLastOccurrence(arr: List[int],n: int,key: int)-> int:
     lastOccurrence = -1
     while low <= high:
         if arr[mid] == key:
-            if arr[mid + 1] == key:
                 low = mid + 1
-            else:
                 lastOccurrence = mid
-                break
         elif arr[mid] > key:
             high = mid - 1
         else:
