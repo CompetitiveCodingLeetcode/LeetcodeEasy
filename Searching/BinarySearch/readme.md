@@ -5,4 +5,4 @@
 ### Types of questions that can be solved using binary search
 
 - find first and last occurrence of a number in a list
-- 
+- find the number of occurrences of a key
