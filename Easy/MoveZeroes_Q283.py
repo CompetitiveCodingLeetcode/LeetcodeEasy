@@ -28,7 +28,7 @@ from typing import List
 
 
 class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
+    def moveZeroes_approach1(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
@@ -44,13 +44,31 @@ class Solution:
 
         return nums
 
+    #optimized approach
+    def moveZeroes_approach2(self,nums: List[int]) -> None:
+        counter =0
+        for idx,num in enumerate(nums):
+            if num != 0:
+                temp = nums[counter]
+                nums[counter] = nums[idx]
+                nums[idx] = temp
+                counter += 1
+
+        return nums
+
 
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
         self.obj = Solution()
 
     def test_case1_approach1(self):
-        self.assertListEqual(self.obj.moveZeroes([0,1,0,3,12]),[1,3,12,0,0])
+        self.assertListEqual(self.obj.moveZeroes_approach1([0,1,0,3,12]),[1,3,12,0,0])
 
     def test_case2_approach1(self):
-        self.assertListEqual(self.obj.moveZeroes([0]),[0])
+        self.assertListEqual(self.obj.moveZeroes_approach1([0]),[0])
+
+    def test_case1_approach2(self):
+        self.assertListEqual(self.obj.moveZeroes_approach2([0,1,0,3,12]),[1,3,12,0,0])
+
+    def test_case2_approach2(self):
+        self.assertListEqual(self.obj.moveZeroes_approach2([0]),[0])
