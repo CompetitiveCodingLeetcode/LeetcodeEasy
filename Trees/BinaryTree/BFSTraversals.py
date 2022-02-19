@@ -1,3 +1,5 @@
+# also knownn as level-order traversal
+
 def BFSTraversal(root):
     c_queue = []
     ans_list=[]

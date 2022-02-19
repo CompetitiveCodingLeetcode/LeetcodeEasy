@@ -1,6 +1,8 @@
+from typing import List
+
 from DFSTraversals import inorder_traversal,preorder_traversal,postorder_traversal
 from BFSTraversals import BFSTraversal
-
+from collections import deque
 
 class BinaryTreeNode:
     def __init__(self, value=None):
@@ -18,9 +20,6 @@ class BinaryTree:
         self.idx = -1
 
     def buildTree(self,node_values = []) -> BinaryTreeNode:
-
-        print("node values=",node_values)
-
         self.idx += 1
 
         if node_values[self.idx] == -1:
@@ -32,12 +31,61 @@ class BinaryTree:
 
         return new_node
 
+
+    def preorder_traversal(self, root: BinaryTreeNode):
+
+        if root == None:
+            return
+        print(root.val,end=",")
+        preorder_traversal(root.left)
+        preorder_traversal(root.right)
+
+    def inorder_traversal(self, root: BinaryTreeNode):
+        if root == None:
+            return
+        inorder_traversal(root.left)
+        print(root.val,end=",")
+        inorder_traversal(root.right)
+
+    def postorder_traversal(self, root: BinaryTreeNode):
+        if root == None:
+            return
+        postorder_traversal(root.left)
+        postorder_traversal(root.right)
+        print(root.val,end=",")
+
+    def level_order_traversal(self,root: BinaryTreeNode) -> List[int]:
+        if root == None:
+            return
+        else:
+            ans = []
+            level_order_traversal_nodes = deque()
+            temp = root
+            level_order_traversal_nodes.append(temp)
+            while len(level_order_traversal_nodes) != 0:
+                temp = level_order_traversal_nodes.popleft()
+                ans.append(temp.val)
+                if temp.left:
+                    level_order_traversal_nodes.append(temp.left)
+                if temp.right:
+                    level_order_traversal_nodes.append(temp.right)
+            return ans
+
+
 if __name__ == "__main__":
     node_values = [1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1]
     btree = BinaryTree()
     root = BinaryTreeNode()
     root = btree.buildTree(node_values)
     print(root.val)
+    print("pre order traversal")
+    btree.preorder_traversal(root)
+    print("inorder traversal")
+    btree.inorder_traversal(root)
+    print("post order traversal")
+    btree.postorder_traversal(root)
+    print("level order traversal")
+    print(btree.level_order_traversal(root))
 
 # newBT = BinaryTreeNode("Drinks")
 # leftChild = BinaryTreeNode("Hot")
