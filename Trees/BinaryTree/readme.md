@@ -59,4 +59,5 @@
     - Space Complexity: O(n) because we are using stack memory
 - Breadth First Search
   - Level Order Traversal
+    - Time complexity: O(n) as we have traversed each node only once
     
