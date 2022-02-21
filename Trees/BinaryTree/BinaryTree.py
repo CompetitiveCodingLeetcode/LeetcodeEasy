@@ -54,6 +54,7 @@ class BinaryTree:
         postorder_traversal(root.right)
         print(root.val,end=",")
 
+    # here we are storing the entire traversal and printing in one line
     def level_order_traversal(self,root: BinaryTreeNode) -> List[int]:
         if root == None:
             return
@@ -71,6 +72,36 @@ class BinaryTree:
                     level_order_traversal_nodes.append(temp.right)
             return ans
 
+    # to store each level traversal in next line for level order traversal
+    def level_order_traversal_pretty(self, root: BinaryTreeNode) -> List[int]:
+        if root == None:
+            return
+        else:
+            ans = []
+            level_nodes = []
+            level_order_traversal_nodes = deque()
+            temp = root
+            level_order_traversal_nodes.append(temp)
+            level_order_traversal_nodes.append(None)
+            while len(level_order_traversal_nodes) != 0:
+                temp = level_order_traversal_nodes.popleft()
+                if temp == None:
+                    if len(level_order_traversal_nodes) == 0:
+                        ans.append(level_nodes)
+                        break
+                    level_order_traversal_nodes.append(None)
+                    ans.append(level_nodes)
+                    level_nodes = []
+                else:
+                    level_nodes.append(temp.val)
+                    if temp.left:
+                        level_order_traversal_nodes.append(temp.left)
+                    if temp.right:
+                        level_order_traversal_nodes.append(temp.right)
+            return ans
+
+
+
 
 if __name__ == "__main__":
     node_values = [1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1]
@@ -86,6 +117,12 @@ if __name__ == "__main__":
     btree.postorder_traversal(root)
     print("level order traversal")
     print(btree.level_order_traversal(root))
+    level_order_traversal = btree.level_order_traversal_pretty(root)
+    for level_nodes in level_order_traversal:
+        for node_val in level_nodes:
+            print(node_val,end=" ")
+        print()
+
 
 # newBT = BinaryTreeNode("Drinks")
 # leftChild = BinaryTreeNode("Hot")
