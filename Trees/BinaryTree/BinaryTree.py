@@ -4,6 +4,7 @@ from DFSTraversals import inorder_traversal,preorder_traversal,postorder_travers
 from BFSTraversals import BFSTraversal
 from collections import deque
 from CountNodes import countNodes, countNodesRecursively
+from SumOfNodes import sum_of_nodes
 
 class BinaryTreeNode:
     def __init__(self, value=None):
@@ -126,6 +127,7 @@ if __name__ == "__main__":
 
     print(countNodes(root))
     print(countNodesRecursively(root))
+    print(sum_of_nodes(root))
 
 
 # newBT = BinaryTreeNode("Drinks")
