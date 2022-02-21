@@ -1,3 +1,4 @@
+#time complexity: O(n)
 def sum_of_nodes(root) -> int:
     if root == None:
         return 0
