@@ -1,5 +1,6 @@
 """
 in an array [3,4,5,6,1] , pivot is the index at which min element in array occurs.
+fid min in roatated sorted array is a variant of this
 """
 import unittest
 from typing import List
