@@ -81,6 +81,54 @@ class Solution:
             return self.binary_search_target(nums, target, 0, pivot - 1)
 
 
+    # one pass for binary search approach:
+    """
+    Here are the detailed breakdowns of the algorithm:
+
+    1. Initiate the pointer start to 0, and the pointer end to n - 1.
+
+    2. Perform standard binary search. While start <= end:
+
+        i) Take an index in the middle mid as a pivot.
+
+        ii) If nums[mid] == target, the job is done, return mid.
+
+        iii) Now there could be two situations:
+
+            a) Pivot element is larger than the first element in the array, i.e. the subarray from the first element to the pivot is non-rotated, as shown in the following graph.
+
+                - If the target is located in the non-rotated subarray:
+                    go left: `end = mid - 1`.
+
+                - Otherwise: go right: `start = mid + 1`.
+            b) Pivot element is smaller than the first element of the array, i.e. the rotation index is somewhere between 0 and mid. It implies that the sub-array from the pivot element to the last one is non-rotated, as shown in the following graph.
+
+                - If the target is located in the non-rotated subarray:
+                    go right: `start = mid + 1`.
+
+                - Otherwise: go left: `end = mid - 1`.
+    3. We're here because the target is not found. Return -1.
+    """
+
+    def search_one_pass(self, nums: List[int], target: int) -> int:
+        start, end = 0, len(nums) - 1
+        while start <= end:
+            mid = start + (end - start) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] >= nums[start]:
+                if target >= nums[start] and target < nums[mid]:
+                    end = mid - 1
+                else:
+                    start = mid + 1
+            else:
+                if target <= nums[end] and target > nums[mid]:
+                    start = mid + 1
+                else:
+                    end = mid - 1
+        return -1
+
+
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
         self.obj = Solution()
@@ -93,3 +141,12 @@ class TestSolution(unittest.TestCase):
 
     def test_case3(self):
         self.assertEqual(self.obj.search([1],0),-1)
+
+    def test_case1_approach2(self):
+        self.assertEqual(self.obj.search_one_pass([4,5,6,7,0,1,2],0),4)
+
+    def test_case2_approach2(self):
+        self.assertEqual(self.obj.search_one_pass([4,5,6,7,0,1,2],3),-1)
+
+    def test_case3_approach2(self):
+        self.assertEqual(self.obj.search_one_pass([1],0),-1)
