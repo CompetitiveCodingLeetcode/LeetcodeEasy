@@ -1,7 +1,7 @@
 
 def height_of_tree(root):
     if root is None:
-        return
+        return 0
     elif root.left is None and root.right is None:
         return 1
     else:

@@ -5,6 +5,8 @@ from BFSTraversals import BFSTraversal
 from collections import deque
 from CountNodes import countNodes, countNodesRecursively
 from SumOfNodes import sum_of_nodes
+from DiameterOfTree import find_diameter,find_diameter_optimized_approach
+from MaximumDepthOfABinaryTree_Q104 import maxDepth
 
 class BinaryTreeNode:
     def __init__(self, value=None):
@@ -128,6 +130,9 @@ if __name__ == "__main__":
     print(countNodes(root))
     print(countNodesRecursively(root))
     print(sum_of_nodes(root))
+    print("diameter = ",find_diameter(root))
+    print("dimeter by optimized approach=",find_diameter_optimized_approach(root).diameter)
+    print("max depth=",maxDepth(root))
 
 
 # newBT = BinaryTreeNode("Drinks")
