@@ -28,6 +28,7 @@ Constraints:
 
 
 """
+import unittest
 
 
 class Solution:
@@ -71,13 +72,33 @@ class Solution:
         return ans
 
 
-obj = Solution()
-print(obj.removeDuplicatesStackApproach("abbaca"))
-print(obj.removeDuplicatesStackApproach("azxxzy"))
-print(obj.removeDuplicatesStackApproach("aa"))
-print(obj.removeDuplicatesStackApproach("a"))
-print(obj.removeDuplicatesStackApproach("aaaaaaaa"))
-print(obj.removeDuplicatesStackApproach("aab"))
-print(obj.removeDuplicatesStackApproach("aabc"))
-print(obj.removeDuplicatesStackApproach("baa"))
-print(obj.removeDuplicatesStackApproach("bcaa"))
+class TestSolution(unittest.TestCase):
+    def setUp(self) -> None:
+        self.obj = Solution()
+
+    def test_case1(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("abbaca"),"ca")
+
+    def test_case2(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("azxxzy"),"ay")
+
+    def test_case3(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("aa"),"")
+
+    def test_case4(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("a"),"a")
+
+    def test_case5(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("aaaaaaaa"),"")
+
+    def test_case6(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("aab"),"b")
+
+    def test_case7(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("aabc"),"bc")
+
+    def test_case8(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("baa"),"b")
+
+    def test_case8(self):
+        self.assertEqual(self.obj.removeDuplicatesStackApproach("bcaa"),"bc")
