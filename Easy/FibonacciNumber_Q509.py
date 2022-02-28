@@ -32,6 +32,8 @@ import unittest
 
 
 class Solution:
+
+    # time complexity: O(2^N), Space complexity: O(N)
     def fib(self, n: int) -> int:
         if n==0:
             return 0
