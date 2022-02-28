@@ -31,7 +31,7 @@ Constraints:
 
 
 """
-
+import unittest
 from typing import List
 
 class Solution:
@@ -79,11 +79,17 @@ class Solution:
         return a
 
 
-obj=Solution()
-print(obj.singleNumber([2,2,1]))
+class TestSolution(unittest.TestCase):
+    def setUp(self) -> None:
+        self.obj = Solution()
 
+    def test_case1(self):
+        self.assertEqual(self.obj.singleNumber([2,2,1]),1)
+        self.assertEqual(self.obj.mathematical_approach([2,2,1]),1)
+        self.assertEqual(self.obj.bit_manipulation_approach([2,2,1]),1)
 
+    def test_case2(self):
+        self.assertEqual(self.obj.singleNumber([4,1,2,1,2]),4)
+        self.assertEqual(self.obj.mathematical_approach([4,1,2,1,2]),4)
+        self.assertEqual(self.obj.bit_manipulation_approach([4,1,2,1,2]),4)
 
-print(obj.mathematical_approach([2,2,1]))
-
-print(obj.bit_manipulation_approach([4,1,2,1,2]))
