@@ -49,12 +49,20 @@ class Solution:
 
         return ans
 
+    def intersection_optimized_approach(self,nums1,nums2):
+        nums1_set = set(nums1)
+        nums2_set = set(nums2)
+        return list(nums1_set & nums2_set)
+
+
 class TestSoluton(unittest.TestCase):
     def setUp(self) -> None:
         self.obj = Solution()
 
     def test_case1(self):
         self.assertListEqual(self.obj.intersection([1,2,2,1],[2,2]),[2])
+        self.assertListEqual(self.obj.intersection_optimized_approach([1, 2, 2, 1], [2, 2]), [2])
 
     def test_case2(self):
         self.assertListEqual(self.obj.intersection([4,9,5],[9,4,9,8,4]),[4,9])
+        self.assertListEqual(self.obj.intersection_optimized_approach([4, 9, 5], [9, 4, 9, 8, 4]), [9, 4])
