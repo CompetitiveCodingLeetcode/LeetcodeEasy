@@ -7,7 +7,7 @@ from CountNodes import countNodes, countNodesRecursively
 from SumOfNodes import sum_of_nodes
 from DiameterOfTree import find_diameter,find_diameter_optimized_approach
 from MaximumDepthOfABinaryTree_Q104 import maxDepth
-from BinaryTreeInorderTraversal_Q94 import inorderTraversal
+from BinaryTreeInorderTraversal_Q94 import inorderTraversal, inorderTraversal_Morris_traversal
 from BinaryTreeNode import BinaryTreeNode
 
 
@@ -132,6 +132,7 @@ if __name__ == "__main__":
     print("dimeter by optimized approach=",find_diameter_optimized_approach(root).diameter)
     print("max depth=",maxDepth(root))
     print(inorderTraversal(root))
+    print(inorderTraversal_Morris_traversal(root))
 
 
 # newBT = BinaryTreeNode("Drinks")
