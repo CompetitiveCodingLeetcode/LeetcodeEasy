@@ -33,6 +33,7 @@ Output: false
 Constraints:
 
 -231 <= x <= 231 - 1"""
+import unittest
 
 
 class Solution:
@@ -52,6 +53,15 @@ class Solution:
             else:
                 return False
 
-x=-123
-obj=Solution()
-print(obj.isPalindrome(x))
+class TestSolution(unittest.TestCase):
+    def setUp(self) -> None:
+        self.obj = Solution()
+
+    def test_case1(self):
+        self.assertFalse(self.obj.isPalindrome(-121))
+
+    def test_case2(self):
+        self.assertFalse(self.obj.isPalindrome(123))
+
+    def test_case3(self):
+        self.assertTrue(self.obj.isPalindrome(121))

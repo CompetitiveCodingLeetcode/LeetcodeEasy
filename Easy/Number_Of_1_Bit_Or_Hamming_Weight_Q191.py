@@ -34,6 +34,8 @@ Constraints:
     The input must be a binary string of length 32.
 
 """
+import unittest
+
 
 class Solution:
     def hammingWeight(self, n: int) -> int:
@@ -46,9 +48,40 @@ class Solution:
             i += 1
         return bits
 
-    def hamming_weight_one_line_solution(self,n: int) -> int:
-        return bin(n).count('1')
+    # in the above approach there will be a minimum of 32 iterations, to reduce the iterations to number of 1s in the number we need to know the following:
+    # n & n-1 = 0
+    def hamming_weight_optimized_solution(self, n: int) -> int:
+        bit_count = 0
+        while n !=0:
+            bit_count += 1
+            n &= (n-1)
+        return bit_count
 
-obj=Solution()
-print(obj.hamming_weight_one_line_solution(11))
-print(obj.hammingWeight(11))
+
+    # def hamming_weight_one_line_solution(self,n: int) -> int:
+    #     return bin(n).count(1)
+
+# obj=Solution()
+# print(obj.hamming_weight_one_line_solution(11))
+# print(obj.hammingWeight(11))
+class TestSolution(unittest.TestCase):
+    def setUp(self) -> None:
+        self.obj = Solution()
+
+    def test_case1(self):
+        # self.assertEqual(self.obj.hamming_weight_one_line_solution(1),1)
+        self.assertEqual(self.obj.hammingWeight(1),1)
+        self.assertEqual(self.obj.hamming_weight_optimized_solution(1),1)
+
+    def test_case2(self):
+        self.assertEqual(self.obj.hamming_weight_optimized_solution(11),3)
+        self.assertEqual(self.obj.hammingWeight(11),3)
+        # self.assertEqual(self.obj.hamming_weight_one_line_solution(11),3)
+
+    def test_case3(self):
+        self.assertEqual(self.obj.hammingWeight(128),1)
+        self.assertEqual(self.obj.hamming_weight_optimized_solution(128),1)
+        # self.assertEqual(self.obj.hamming_weight_one_line_solution(128),1)
+
+
+

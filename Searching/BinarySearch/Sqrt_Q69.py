@@ -63,6 +63,25 @@ class Solution:
         right = left + 1
         return left if right * right > x else right
 
+    def more_precision(self,x,precision,temp_sol):
+        factor = 1
+        ans = temp_sol
+
+        for i in range(0,precision):
+            factor /= 10
+            j = ans
+            while j*j < x:
+                ans = j
+                j+= factor
+        return ans
+
+
+    def mySqrt_with_precision(self,x,precision):
+        tempSol = self.mySqrt(x)
+        ans = self.more_precision(x,precision,tempSol)
+        print(ans)
+        return ans
+
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
         self.obj = Solution()
@@ -90,3 +109,15 @@ class TestSolution(unittest.TestCase):
 
     def test_case4_approach2(self):
         self.assertEqual(self.obj.mySqrt_approach2(64),8)
+
+    def test_case1_with_precision(self):
+        self.assertEqual(self.obj.mySqrt_with_precision(37,3),6.082)
+
+    def test_case2_with_precision(self):
+        self.assertEqual(self.obj.mySqrt_with_precision(101,3),10.049)
+
+    def test_case3_with_precision(self):
+        self.assertEqual(self.obj.mySqrt_with_precision(37,2),6.08)
+
+    def test_case4_with_precision(self):
+        self.assertEqual(self.obj.mySqrt_with_precision(101,2),10.04)

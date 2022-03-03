@@ -9,6 +9,8 @@ from DiameterOfTree import find_diameter,find_diameter_optimized_approach
 from MaximumDepthOfABinaryTree_Q104 import maxDepth
 from BinaryTreeInorderTraversal_Q94 import inorderTraversal, inorderTraversal_Morris_traversal
 from BinaryTreeNode import BinaryTreeNode
+from AverageOfLevelsInBinaryTree_Q637 import Solution
+from countLeafNodes import noOfLeafNodes
 
 
     #
@@ -133,6 +135,9 @@ if __name__ == "__main__":
     print("max depth=",maxDepth(root))
     print(inorderTraversal(root))
     print(inorderTraversal_Morris_traversal(root))
+    print(Solution().averageOfLevels(root))
+    print(noOfLeafNodes(root))
+
 
 
 # newBT = BinaryTreeNode("Drinks")
