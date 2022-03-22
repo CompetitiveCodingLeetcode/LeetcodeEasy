@@ -32,8 +32,11 @@ Follow up:
 Try to come up with as many solutions as you can. There are at least three different ways to solve this problem.
 Could you do it in-place with O(1) extra space?
 
+NOTE: see the cyclic replacement and reverse approach
+
 """
-import unittest
+
+
 from typing import List
 
 
@@ -50,12 +53,3 @@ class Solution:
         for i in range(0, n):
             nums[i] = temp[i]
 
-class TestSolution(unittest.TestCase):
-    def setUp(self) -> None:
-        self.obj = Solution()
-
-    def test_case1(self):
-        self.assertListEqual(self.nums,[5,6,7,1,2,3,4])
-
-    def test_case2(self):
-        self.assertListEqual(self.obj.rotate([-1,-100,3,99],2),[3,99,-1,-100])
