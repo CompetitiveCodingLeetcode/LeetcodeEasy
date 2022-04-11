@@ -19,6 +19,20 @@ def binary_search(arr: List[int], target: int) -> int:
 
     return -1
 
+def binary_search_recursive(arr: List[int], low:int,high:int, target: int) -> int:
+    if low>high:
+        return -1
+    mid = low + int((high-low)/2)
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return binary_search_recursive(arr,mid+1,high,target)
+    else:
+        return binary_search_recursive(arr,low,mid-1,target)
+
+
+
+
 
 class TestBinarySearch(unittest.TestCase):
     def test_positive(self):
@@ -32,3 +46,15 @@ class TestBinarySearch(unittest.TestCase):
 
     def test_element_found_in_end(self):
         self.assertEqual(3, binary_search([1, 2, 3, 6], 6))
+
+    def test_case1(self):
+        self.assertEqual(3, binary_search_recursive([1,2,3,5],0,3, 5))
+
+    def test_case2(self):
+        self.assertEqual(-1, binary_search_recursive([1,3,4,24],0,3,5))
+
+    def test_case3(self):
+        self.assertEqual(0, binary_search_recursive([1,2,3,23],0,3,1))
+
+    def test_case4(self):
+        self.assertEqual(3,binary_search_recursive([1,2,3,6],0,3,6))
