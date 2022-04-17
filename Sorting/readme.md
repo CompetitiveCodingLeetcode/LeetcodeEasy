@@ -68,3 +68,5 @@ elements to the right are greater than it.
       2. correct pos of pivot = s+count
    3. now put lesser elements towards left and greater elements towards right by two-pointer approach and swap
 5. base case for recursion = if s>= e return
+- Time complexity: O(nlogn)
+- Space complexity: O(n)
