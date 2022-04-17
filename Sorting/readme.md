@@ -44,4 +44,9 @@ The following link contains the possible ways to do customized sorting using sor
 - Best case time complexity: O(n^2)
 - Worst case space complexity: O(n^2) total, O(1) in auxilary
 
-## 
+## MERGE SORT
+
+- merge sort is used for sorting linnked list in O(nlogn) time.
+- merge sort helps in solving inversion count principle
+- time complexity: O(nlogn)
+- space complexity: O(n)
