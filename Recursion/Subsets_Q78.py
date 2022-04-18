@@ -35,30 +35,25 @@ from typing import List
 class Solution():
     def find_subsets(self,nums:List[int],output:List[int],index:int,ans:List[List[int]]):
         if index>=len(nums):
-            if output not in ans:
-                #TODO: need to check why output.copy() is used
-                ans.append(output.copy())
-            # output=[]
-            print(ans)
+            #TODO: need to check why output.copy() is used
+            ans.append(output.copy())
             return
 
         else:
 
             #include call
-            print("output=",output)
             element = nums[index]
             output.append(element)
             self.find_subsets(nums,output,index+1,ans)
             output.pop()
             # exclude call
             self.find_subsets(nums, output, index + 1, ans)
-        return ans
 
 
     def subsets(self, nums: List[int]) -> List[List[int]]:
         index=0
         output=[]
-        ans=[[]]
+        ans=[]
         self.find_subsets(nums,output,index,ans)
         return ans
 
