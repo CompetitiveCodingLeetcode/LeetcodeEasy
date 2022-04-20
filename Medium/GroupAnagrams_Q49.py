@@ -42,7 +42,7 @@ class Solution:
 
         return ans
 
-    # Time complexity: O(nk) and space complexity: O(nk)
+    # Time complexity: O(nk) and space complexity: O(nk),  where NN is the length of strs, and KK is the maximum length of a string in strs
     """
     Intuition
 
@@ -66,8 +66,6 @@ In Java, the hashable representation of our count will be a string delimited wit
         for key in ans.keys():
             res.append(ans[key])
         return res
-
-
 
 
 class TestSolution(unittest.TestCase):
