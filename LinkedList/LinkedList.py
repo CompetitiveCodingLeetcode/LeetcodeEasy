@@ -53,5 +53,5 @@ class LinkedList:
 
 customLL = LinkedList()
 customLL.generate_list(10, 0, 99)
-print(customLL)
-print(len(customLL))
+# print(customLL)
+# print(len(customLL))
