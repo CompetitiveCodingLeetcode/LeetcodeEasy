@@ -21,6 +21,18 @@ def reverse_linked_list_stack_approach(input_ll):
         fptr.val = stack_ll.pop()
         fptr = fptr.next
 
+#Time complexity - O(n), space complexity-O(n)
+def reverse_linked_list_recursively(head):
+    if head == None or head.next == None:
+        return head
+
+    left_ll_head = reverse_linked_list_recursively(head.next)
+    head.next.next = head
+    head.next = None
+
+    return left_ll_head
+    
+
 
 # Time Complexity - O(n) Space Complexity - O(1)
 def reverse_linked_list_optimized_approach(input_ll):
@@ -42,3 +54,8 @@ reverse_linked_list_stack_approach(customLL)
 print(customLL)
 reverse_linked_list_optimized_approach(customLL)
 print(customLL)
+print("recursive approach")
+customLL_head = reverse_linked_list_recursively(customLL.head)
+while customLL_head != None:
+    print(customLL_head.val,end=",")
+    customLL_head = customLL_head.next
