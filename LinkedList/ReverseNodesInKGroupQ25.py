@@ -72,7 +72,47 @@ def set_values_for_linked_list(input_LL, k):
             count += 1
         count = 0
 
+# does not work in case of [1,2,3,4,5] and k=3 ans should be 3,2,1,4,5 however the ans given by my soln is 3,2,1,5,4
+def recursive_approach(input_ll_head,k):
+    if input_ll_head == None:
+        return None
+
+    curr = input_ll_head
+    prev = None
+    fwd = curr.next
+    count = 0
+
+    while curr is not None and count<k:
+        fwd = curr.next
+        curr.next = prev
+        prev = curr
+        curr = fwd
+
+        count += 1
+
+    if fwd is not None:
+        input_ll_head.next = recursive_approach(fwd,k)
+
+    return prev
+
 #TODO: try doing in O(1) space complexity : https://leetcode.com/problems/reverse-nodes-in-k-group/discuss/1345590/Python-O(n)O(1)-timememory-a-bit-explained
+def optimized_approach(input_ll,k):
+    head = input_ll.head
+    count=1
+    prev = None
+    curr = head
+    fwd = curr.next
+    next_k = head
+    while curr is not None :
+        while count%3 != 0 :
+            count += 1
+            next_k = next_k.next
+
+        curr.next = next_k.next
+        prev = curr
+        curr = fwd
+        fwd = fwd.next
+
 
 
 customLL = LinkedList()
@@ -80,3 +120,11 @@ customLL.generate_list(12, 0, 99)
 print(customLL)
 set_values_for_linked_list(customLL, 3)
 print(customLL)
+print("calling recursive approach")
+head = recursive_approach(customLL.head,3)
+while head is not None:
+    print(head.val,end=",")
+    head = head.next
+# print("optimized approach")
+# optimized_approach(customLL,3)
+# print(customLL)
