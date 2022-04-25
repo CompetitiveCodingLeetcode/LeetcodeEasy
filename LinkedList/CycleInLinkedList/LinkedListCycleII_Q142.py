@@ -35,6 +35,28 @@ pos is -1 or a valid index in the linked-list.
 
 
 Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+
+APPROACH:
+1. detect if there is cycle in the linked list (cycle exists if slowptr = fastptr)
+2. as soon as slowptr = fastptr put slowptr = head
+3. now increment bith slowptr and fastptr by 1 and the point where slowptr=fastptr is the starting of cycle.
+
+How did the aboive derivatio came into existence?
+let A be distance from start of linked list to start of loop
+Let B be distance from start of loop to the point where loop in cycle is detected at step 1 of approach
+let c be distance of cycle / loop
+
+distance by fastptr = 2*(distannce by slowptr)
+A + x*(C) + B = 2*(A+y*(C) +B); where x= number of cycles covered by fastptr and y = number of cycles covered by slowptr
+A+Cx+B = 2A +2Cy+2B
+(x-2y)C = A+B
+let x-2y = k
+A+B = kC
+
+the above eqn tells that A+B means cycle is completed
+that means if fastptr is at B distance then it would require A dist to complete the cycle.
+
 """
 
 
