@@ -39,6 +39,7 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
 
 
 class Solution:
+    #time complexity: O(n) and space complexity: O(1)
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         if head is None or head.next is None:
             return False
