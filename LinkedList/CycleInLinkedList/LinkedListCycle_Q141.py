@@ -40,18 +40,16 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        if head is None:
+        if head is None or head.next is None:
             return False
         else:
             slow_ptr = head
-            fast_ptr = head.next
-            while slow_ptr != fast_ptr:
-                if fast_ptr is None or fast_ptr.next is None:
-                    return False
+            fast_ptr = head
+            while slow_ptr is not None and fast_ptr is not None:
+                fast_ptr = fast_ptr.next
+                if fast_ptr is not None:
+                    fast_ptr = fast_ptr.next
                 slow_ptr = slow_ptr.next
-                fast_ptr = fast_ptr.next.next
-
-            if slow_ptr == fast_ptr:
-                return True
-            else:
-                return False
+                if slow_ptr == fast_ptr:
+                    return True
+            return False
