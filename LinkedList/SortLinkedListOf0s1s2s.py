@@ -3,7 +3,7 @@
 """
 from LinkedList import LinkedList,Node
 
-
+# time complexity: O(n), space complexity: O(n)
 def sort_approach1(head):
     count_nums = [0]*3
     temp = head
@@ -37,6 +37,7 @@ def insert_at_tail(tail,node):
     tail = node
     return tail
 
+# time complexity:O(n), space complexity: O(1)
 def sort_approach2(head):
     #cretae three linked list for zer,1,and 2 respectively with dummy nodes in beginnning with val = -1
     zerohead = Node(-1)
