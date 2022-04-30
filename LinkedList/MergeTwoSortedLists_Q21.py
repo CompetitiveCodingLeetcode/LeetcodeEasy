@@ -29,7 +29,7 @@ The number of nodes in both lists is in the range [0, 50].
 Both list1 and list2 are sorted in non-decreasing order.
 """
 
-
+#time complexity: O(n), space complexity: O(1)
 class Solution:
     def solve(self, list1, list2):
         prev = list1
