@@ -29,6 +29,17 @@ from ReverseOfLinkedList import reverse_linked_list_optimized
 from MiddleOfLinkedList_Q876 import Solution1
 
 class Solution:
+    def middle_of_linked_list_with_head(self, head):
+        if head is None:
+            return None
+        slow_ptr = head
+        fast_ptr = head
+
+        while fast_ptr.next is not None and fast_ptr.next.next is not None:
+            fast_ptr = fast_ptr.next.next
+            slow_ptr = slow_ptr.next
+
+        return slow_ptr
     #time complexity: O(n), space complexity: O(n)
     def isPalindrome(self, head: Node) -> bool:
         list_vals = ""
@@ -45,7 +56,7 @@ class Solution:
 
     #time complexity: O(n), space complexity:O(1)
     def is_pallindrome_optimized_approach(self,head):
-        middle = Solution1().middle_of_linked_list_with_head(head)
+        middle = self.middle_of_linked_list_with_head(head)
 
         middle.next = reverse_linked_list_optimized(middle.next)
 
