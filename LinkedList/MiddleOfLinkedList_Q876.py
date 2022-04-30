@@ -1,6 +1,6 @@
 from LinkedList import LinkedList,Node
 
-class Solution():
+class Solution1():
     def middle_of_linked_list(self):
         custom_ll = LinkedList()
         custom_ll.generate_list(2,1,100)
@@ -24,5 +24,19 @@ class Solution():
 
         return slow_ptr
 
-obj = Solution()
+    def middle_of_linked_list_with_head(self,head):
+        if head is None:
+            return None
+        slow_ptr = head
+        fast_ptr = head.next
+
+        while fast_ptr is not None:
+            fast_ptr = fast_ptr.next
+            if fast_ptr is not None:
+                fast_ptr = fast_ptr.next
+            slow_ptr = slow_ptr.next
+
+        return slow_ptr
+
+obj = Solution1()
 print(obj.middle_of_linked_list())

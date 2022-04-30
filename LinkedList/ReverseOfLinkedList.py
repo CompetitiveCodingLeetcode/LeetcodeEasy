@@ -46,6 +46,16 @@ def reverse_linked_list_optimized_approach(input_ll):
         current = next_ptr
     input_ll.head = last
 
+def reverse_linked_list_optimized(head):
+    last = None
+    current = head
+    while current is not None:
+        next_ptr = current.next
+        current.next = last
+        last = current
+        current = next_ptr
+    head = last
+    return head
 
 customLL = LinkedList()
 customLL.generate_list(12, 0, 99)
