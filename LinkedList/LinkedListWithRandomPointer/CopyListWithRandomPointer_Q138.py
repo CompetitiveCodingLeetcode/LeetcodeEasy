@@ -100,6 +100,56 @@ class Solution:
 
         return clone_ll_head
 
+
+    def copy_random_list_optimized(self,head:Node)-> Node:
+        temp = head
+        clone_ll_head = None
+        curr = None
+        # 1. create clone linked list with next pointers
+        while temp is not None:
+            ptr = Node(temp.data, None, None)
+            if clone_ll_head is None:
+                clone_ll_head = ptr
+                curr = ptr
+            else:
+                curr.next = ptr
+                curr = ptr
+            temp = temp.next
+
+        t1 = head
+        p1 = clone_ll_head
+        # 2. add clone ll nodes in between original ll nodes
+        while t1 is not None and p1 is not None:
+            next_node = t1.next
+            t1.next = p1
+            t1 = next_node
+
+            next_node = p1.next
+            p1.next = t1
+            p1 = next_node
+
+        # 3. add random pointers for clone ll
+        temp = head
+        while temp is not None:
+            if temp.next is not None:
+                if temp.random is not None:
+                    temp.next.random = temp.random.next
+            temp = temp.next.next
+
+        # 4. revert step 2
+        t1 = head
+        p1 = clone_ll_head
+        while t1 is not None and p1 is not None:
+            t1.next = p1.next
+            t1 = t1.next
+
+            if t1 is not None:
+                p1.next = t1.next
+            p1 = p1.next
+
+        return clone_ll_head
+
+
 if __name__=="__main__":
     head = Node(1)
     head.next = Node(2)
@@ -117,3 +167,7 @@ if __name__=="__main__":
 
     print('\nCloned Linked List:')
     traverse(clone)
+
+    clone2 = Solution().copy_random_list_optimized(head)
+    print("Optimized clone linked list-")
+    traverse(clone2)
