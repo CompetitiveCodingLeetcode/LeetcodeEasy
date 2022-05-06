@@ -100,7 +100,7 @@ class Solution:
 
         return clone_ll_head
 
-
+    # time complexity: O(n), space complexity: O(1)
     def copy_random_list_optimized(self,head:Node)-> Node:
         temp = head
         clone_ll_head = None
