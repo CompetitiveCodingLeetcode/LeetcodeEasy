@@ -156,3 +156,7 @@ because if we make head reference to null still each node contains a reference i
 because if we make head reference to null still each node contains a reference in terms of the prev pointer
 
 - Space Complexity: O(1)
+
+### why you prefer merge sort in linked list and quick sort in arrays?
+
+- 

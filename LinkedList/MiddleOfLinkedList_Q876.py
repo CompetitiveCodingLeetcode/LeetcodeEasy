@@ -39,4 +39,4 @@ class Solution1():
         return slow_ptr
 
 obj = Solution1()
-print(obj.middle_of_linked_list())
+print(obj.middle_of_linked_list_with_head())
