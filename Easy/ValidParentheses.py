@@ -48,6 +48,7 @@ class Solution:
                 opening_bracket.append(c)
                 index += 1
             else:
+                # for the following test case : test_invalid_no_opening_symbol
                 if index == 0:
                     return False
                 if bracket_dict[opening_bracket[index - 1]] == c:
