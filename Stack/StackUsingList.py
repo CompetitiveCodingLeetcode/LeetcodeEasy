@@ -30,13 +30,13 @@ class Stack:
             return num
 
     def is_full(self):
-        if len(self.stack) == self.max_size:
+        if self.top == self.max_size  - 1:
             return True
         else:
             return False
 
     def is_empty(self):
-        if len(self.stack) == 0:
+        if self.top == -1:
             return True
         else:
             return False
