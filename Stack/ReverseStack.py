@@ -7,6 +7,8 @@ pop(S)
 from InsertElementAtBottomOfStack import *
 from StackUsingList import Stack
 
+
+# time complexity: O(n^2) ; space complexity: O(n^2)
 def reverse_stack(stack):
 
     if len(stack) == 1:
