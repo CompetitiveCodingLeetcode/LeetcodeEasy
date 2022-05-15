@@ -50,6 +50,7 @@ class Solution:
             else:
                 count += 1
 
+    #time complexity: O(nm^2) where n= len(nums1) and m = len(nums2)
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         idx = -1
         ans = []
@@ -66,6 +67,26 @@ class Solution:
                 ans.append(-1)
         return ans
 
+    def next_greater_element_optimized(self,nums1,nums2):
+        ans = []
+        mapping = {}
+        stack = []
+        for num in nums2:
+            if len(stack) == 0:
+                stack.append(num)
+            else:
+                while len(stack) != 0 and num > stack[-1]:
+                    mapping[stack.pop()] = num
+                stack.append(num)
+        while len(stack) != 0:
+            mapping[stack.pop()] = -1
+
+        for num in nums1:
+            ans.append(mapping[num])
+
+        return ans
+
+
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
         self.obj = Solution()
@@ -76,3 +97,11 @@ class TestSolution(unittest.TestCase):
     def test_case2(self):
         self.assertListEqual(self.obj.nextGreaterElement([2,4],[1,2,3,4]),[3,-1])
 
+    def test_case1_optimized(self):
+        self.assertListEqual(self.obj.next_greater_element_optimized([4,1,2],[1,3,4,2]),[-1,3,-1])
+
+    def test_case2_optimized(self):
+        self.assertListEqual(self.obj.next_greater_element_optimized([2,4],[1,2,3,4]),[3,-1])
+
+    def test_case3_optimized(self):
+        self.assertListEqual(self.obj.next_greater_element_optimized([1,3,4,5,2],[6,5,4,3,2,1,7]),[7,7,7,7,7])
