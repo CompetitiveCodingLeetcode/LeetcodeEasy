@@ -25,7 +25,7 @@ Follow up: Could you do it in O(n) time and O(1) space?
 """
 
 from LinkedList import LinkedList,Node
-from ReverseOfLinkedList import reverse_linked_list_optimized
+from ReverseOfLinkedList_Q206 import reverse_linked_list_optimized
 from MiddleOfLinkedList_Q876 import Solution1
 
 class Solution:

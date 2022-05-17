@@ -45,6 +45,7 @@ class Solution:
         return nums
 
     #optimized approach
+    #when we encounter a non-zero element, we need to swap elements pointed by current and slow pointer, then advance both pointers. If it's zero element, we just advance current pointer.
     def moveZeroes_approach2(self,nums: List[int]) -> None:
         counter =0
         for idx,num in enumerate(nums):

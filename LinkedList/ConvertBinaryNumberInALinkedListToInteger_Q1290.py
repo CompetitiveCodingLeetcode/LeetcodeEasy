@@ -48,3 +48,12 @@ class Solution:
             exp += 1
             curr = curr.next
         return val
+
+
+    def getDecimalValueOptimizedApproach(self,head):
+        val = head.val
+        curr = head.next
+        while curr is not None:
+            val = (val << 1) | curr.val
+            curr = curr.next
+        return val

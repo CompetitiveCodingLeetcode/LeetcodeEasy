@@ -50,6 +50,7 @@ class Solution:
 
     # in the above approach there will be a minimum of 32 iterations, to reduce the iterations to number of 1s in the number we need to know the following:
     # n & n-1 = 0
+    # for any number nn, doing a bit-wise AND of n and n - 1 flips the least-significant 1-bit in n to 0.nstead of checking every bit of the number, we repeatedly flip the least-significant 1-bit of the number to 0, and add 1 to the sum. As soon as the number becomes 0, we know that it does not have any more 1-bits, and we return the sum.
     def hamming_weight_optimized_solution(self, n: int) -> int:
         bit_count = 0
         while n !=0:
