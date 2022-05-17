@@ -90,6 +90,21 @@ class Solution:
 
         return nums
 
+    def sorted_squares_optimized_approach(self,nums):
+        result = [0]*len(nums)
+        left = 0
+        right = len(nums) - 1
+
+        for i in range(len(nums)-1,-1,-1):
+            if abs(nums[left])<abs(nums[right]):
+                square = nums[right]
+                right -= 1
+            else:
+                square = nums[left]
+                left += 1
+            result[i] = square*square
+        return result
+
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
         self.obj = Solution()
@@ -99,3 +114,9 @@ class TestSolution(unittest.TestCase):
 
     def test_case2(self):
         self.assertEqual(self.obj.sortedSquares([-7,-3,2,3,11]),[4,9,9,49,121])
+
+    def test_case1_optimized_approach(self):
+        self.assertEqual(self.obj.sorted_squares_optimized_approach([-4,-1,0,3,10]),[0,1,9,16,100])
+
+    def test_case2_optimized_approach(self):
+        self.assertEqual(self.obj.sorted_squares_optimized_approach([-7,-3,2,3,11]),[4,9,9,49,121])
