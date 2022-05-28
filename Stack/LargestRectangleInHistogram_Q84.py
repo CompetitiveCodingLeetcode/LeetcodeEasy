@@ -65,6 +65,7 @@ class Solution:
 
         return ans
 
+    # time complexity: O(n), space complexity: O(n)
     def largestRectangleArea(self, heights: List[int]) -> int:
         next_smaller_heights = self.find_next_smaller_heights(heights)
         prev_smaller_heights = self.find_prev_smaller_heights(heights)
