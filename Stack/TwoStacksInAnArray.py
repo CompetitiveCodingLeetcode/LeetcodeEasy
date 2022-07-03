@@ -5,6 +5,14 @@ push2(int x) –> pushes x to second stack
 pop1() –> pops an element from first stack and return the popped element
 pop2() –> pops an element from second stack and return the popped element
 Implementation of twoStack should be space efficient.
+
+
+Approach1: Not space optimized:
+divide the array into two by n/2.
+
+Approach2: Space optimized:
+stack1 fills from start
+stack2 fills from end
 """
 
 class TwoStack():
