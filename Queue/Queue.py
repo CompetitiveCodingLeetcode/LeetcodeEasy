@@ -42,6 +42,8 @@ print(q)
 print(q.dequeue())
 print(q)
 print(q.peek())
+print(q.dequeue())
 q.delete_queue()
 print(q)
+
 
