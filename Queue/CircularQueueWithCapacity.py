@@ -42,8 +42,8 @@ class Queue:
         else:
             val = self.queue[self.front]
             front = self.front
-            if self.rear + 1 == self.maxSize:
-                self.rear = 0
+            if self.front + 1 == self.maxSize:
+                self.front = 0
             elif self.rear == self.front:
                 self.rear = -1
                 self.front = -1
