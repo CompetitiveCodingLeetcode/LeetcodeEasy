@@ -33,17 +33,17 @@ class Queue:
         self.queue = None
 
 
-q = Queue()
-print(q.isEmpty())
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-print(q)
-print(q.dequeue())
-print(q)
-print(q.peek())
-print(q.dequeue())
-q.delete_queue()
-print(q)
-
+# q = Queue()
+# print(q.isEmpty())
+# q.enqueue(1)
+# q.enqueue(2)
+# q.enqueue(3)
+# print(q)
+# print(q.dequeue())
+# print(q)
+# print(q.peek())
+# print(q.dequeue())
+# q.delete_queue()
+# print(q)
+#
 
