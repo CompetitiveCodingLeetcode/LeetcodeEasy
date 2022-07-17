@@ -2,10 +2,13 @@ class Solution():
 
 
     def create_matrix(self,N, M, Q, query):
-        rows = [0]*M
+        rows = []
         mat=[]
         for i in range(0,N):
+            for j in range(0,M):
+                rows.append(0)
             mat.append(rows)
+            rows=[]
 
         for i in range(0,Q):
             j = query[i][1]
@@ -19,7 +22,6 @@ class Solution():
             elif right_or_left == 1:
                 for col in range(k-1,M):
                     mat[j-1][col] = 1
-
         return mat
 
 
@@ -95,3 +97,4 @@ class Solution():
         return min(ans)
 
 print(Solution().solve(2,6,2,[[1,1,5],[0,2,2]],1,3))
+print(Solution().solve(4,5,5,[[1,1,4],[0,2,2],[1,2,5],[0,3,1],[1,3,4]],1,2))
