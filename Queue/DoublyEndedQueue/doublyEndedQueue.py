@@ -90,16 +90,16 @@ class DoubleEndedQueue():
             return True
         return False
 
-deq = DoubleEndedQueue(4)
-print(deq.pop_front())
-print(deq.pop_back())
-print(deq.push_back(1))
-print(deq.push_front(2))
-print(deq.pop_front())
-print(deq.push_back(3))
-print(deq.push_back(4))
-print(deq.push_front(5))
-print(deq.push_back(6))
-print(deq.pop_front())
-print(deq.pop_back())
+# deq = DoubleEndedQueue(4)
+# print(deq.pop_front())
+# print(deq.pop_back())
+# print(deq.push_back(1))
+# print(deq.push_front(2))
+# print(deq.pop_front())
+# print(deq.push_back(3))
+# print(deq.push_back(4))
+# print(deq.push_front(5))
+# print(deq.push_back(6))
+# print(deq.pop_front())
+# print(deq.pop_back())
 

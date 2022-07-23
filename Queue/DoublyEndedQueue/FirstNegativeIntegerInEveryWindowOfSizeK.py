@@ -40,6 +40,8 @@ Constraints:
 1 <= K <= N
 """
 
+from doublyEndedQueue import DoubleEndedQueue
+
 # time complexity: O(nk)
 def printFirstNegativeInteger(A, N, K):
     # code here
@@ -54,4 +56,38 @@ def printFirstNegativeInteger(A, N, K):
 
     return ans
 
+# time complexity: O(n), Space complexity: O(k)
+def printFirstNegativeInteger_approach2(A,N,K):
+    ans = []
+    dq = DoubleEndedQueue(len(A))
+    #process first window
+    for i in range(0,K):
+        if A[i] < 0:
+            dq.push_back(i)
+
+    # update ans for first window
+    if not dq.is_empty():
+        ans.append(A[dq.queue[dq.front]])
+    else:
+        ans.append(0)
+
+    #process for rest of the windows
+    for i in range(K,N):
+        # remove the unwanted window answer from ans
+        if not dq.is_empty() and (i-dq.queue[dq.front] >= K):
+            dq.pop_front()
+        # addition
+        if A[i] < 0:
+            dq.push_back(i)
+        #update answer
+        if not dq.is_empty():
+            ans.append(A[dq.queue[dq.front]])
+        else:
+            ans.append(0)
+    return ans
+
+#TODO: optimized approach with O(1) space complexity
+
+
 print(printFirstNegativeInteger([12, -1, -7, 8, -15, 30, 16, 2],8,3))
+print(printFirstNegativeInteger_approach2([12, -1, -7, 8, -15, 30, 16, 2],8,3))
