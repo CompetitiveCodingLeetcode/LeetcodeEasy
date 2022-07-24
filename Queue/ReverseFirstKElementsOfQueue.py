@@ -22,7 +22,7 @@ Output : Q = [40, 30, 20, 10, 50, 60,
 """
 import unittest
 
-
+# Time complexity: O(n), Space complexity: O(k)
 class Solution():
     def reverse(self,q,k):
         stack = []
