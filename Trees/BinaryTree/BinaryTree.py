@@ -35,6 +35,29 @@ class BinaryTree:
 
         return new_node
 
+    def build_from_level_order_traversal(self,root):
+        q = deque()
+        data = int(input("Enter root data:"))
+        root = BinaryTreeNode(data)
+        q.append(root)
+
+        while len(q) != 0:
+            temp = q.popleft()
+            left_data = int(input(f"Enter left data for : {temp.val}"))
+
+            if left_data != -1:
+                temp.left = BinaryTreeNode(left_data)
+                q.append(temp.left)
+
+            right_data = int(input(f"Enter right data for : {temp.val}"))
+
+            if right_data != -1:
+                temp.right = BinaryTreeNode(right_data)
+                q.append(temp.right)
+
+        return root
+
+
 
     def preorder_traversal(self, root: BinaryTreeNode):
 
@@ -126,6 +149,11 @@ if __name__ == "__main__":
         for node_val in level_nodes:
             print(node_val,end=" ")
         print()
+    # build tree from level order traversal
+    root2=BinaryTreeNode()
+    btree2 = BinaryTree()
+    root2= btree2.build_from_level_order_traversal(root2)
+    print(btree2.level_order_traversal_pretty(root2))
 
     print(countNodes(root))
     print(countNodesRecursively(root))
