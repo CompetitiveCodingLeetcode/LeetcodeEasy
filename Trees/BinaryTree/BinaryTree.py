@@ -10,7 +10,8 @@ from MaximumDepthOfABinaryTree_Q104 import maxDepth
 from BinaryTreeInorderTraversal_Q94 import inorderTraversal, inorderTraversal_Morris_traversal
 from BinaryTreeNode import BinaryTreeNode
 from AverageOfLevelsInBinaryTree_Q637 import Solution
-from countLeafNodes import noOfLeafNodes
+from countLeafNodes import noOfLeafNodes, num_of_leaf_nodes_using_inorder_traversal
+from HeightOfTree import height_of_tree
 
 
     #
@@ -149,6 +150,9 @@ if __name__ == "__main__":
         for node_val in level_nodes:
             print(node_val,end=" ")
         print()
+    print("height of binary tree:",height_of_tree(root))
+    print("number of leaf nodes:",noOfLeafNodes(root))
+
     # build tree from level order traversal
     root2=BinaryTreeNode()
     btree2 = BinaryTree()
@@ -164,7 +168,8 @@ if __name__ == "__main__":
     print(inorderTraversal(root))
     print(inorderTraversal_Morris_traversal(root))
     print(Solution().averageOfLevels(root))
-    print(noOfLeafNodes(root))
+    print("Leaf nodes===",noOfLeafNodes(root))
+    print(num_of_leaf_nodes_using_inorder_traversal(root))
 
 
 
