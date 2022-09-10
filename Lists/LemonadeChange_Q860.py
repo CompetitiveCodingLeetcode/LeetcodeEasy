@@ -116,7 +116,6 @@ class Solution:
                     return False
         return True
 
-
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
         self.obj = Solution()
