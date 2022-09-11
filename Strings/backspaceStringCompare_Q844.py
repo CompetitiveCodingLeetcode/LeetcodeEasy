@@ -59,6 +59,21 @@ class Solution:
         else:
             return False
 
+    def backspaceCompare_beautify(self,s,t):
+        def build(s):
+            ans=[]
+            for c in s:
+                if c != '#':
+                    ans.append(c)
+                elif ans:
+                    ans.pop()
+
+            return ''.join(ans)
+        return build(s) == build(t)
+
+
+
+
 
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
@@ -75,3 +90,15 @@ class TestSolution(unittest.TestCase):
 
     def test_case4(self):
         self.assertTrue(self.obj.backspaceCompare("y#fo##f","y#f#o##f"))
+
+    def test_case5(self):
+        self.assertTrue(self.obj.backspaceCompare_beautify("ab#c","ad#c"))
+
+    def test_case6(self):
+        self.assertFalse(self.obj.backspaceCompare_beautify("a#c","b"))
+
+    def test_case7(self):
+        self.assertTrue(self.obj.backspaceCompare_beautify("ab##","c#d#"))
+
+    def test_case8(self):
+        self.assertTrue(self.obj.backspaceCompare_beautify("y#fo##f","y#f#o##f"))
