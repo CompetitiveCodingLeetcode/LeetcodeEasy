@@ -13,6 +13,7 @@ from AverageOfLevelsInBinaryTree_Q637 import Solution
 from countLeafNodes import noOfLeafNodes, num_of_leaf_nodes_using_inorder_traversal
 from HeightOfTree import height_of_tree
 from balancedBinaryTree_Q110 import Solution as balancedBinaryTreeSolution
+from IsSumTree import Solution as isSumTreeSolution
 
 
     #
@@ -175,7 +176,11 @@ if __name__ == "__main__":
     print("is balanced flag:",balancedBinaryTreeSolution().isBalanced(root2))
     print("is balanced flag optimized:",balancedBinaryTreeSolution().is_balanced_optimized(root2).is_balanced)
 
-
+    root3 = BinaryTreeNode()
+    btree3 = BinaryTree()
+    root3 = btree3.build_from_level_order_traversal(root3)
+    print(btree3.level_order_traversal_pretty(root3))
+    print("is sum tree:",isSumTreeSolution().is_sum_tree(root3).is_sum_tree)
 
 
 # newBT = BinaryTreeNode("Drinks")
