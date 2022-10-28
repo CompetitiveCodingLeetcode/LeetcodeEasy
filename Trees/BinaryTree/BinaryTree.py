@@ -12,6 +12,7 @@ from BinaryTreeNode import BinaryTreeNode
 from AverageOfLevelsInBinaryTree_Q637 import Solution
 from countLeafNodes import noOfLeafNodes, num_of_leaf_nodes_using_inorder_traversal
 from HeightOfTree import height_of_tree
+from balancedBinaryTree_Q110 import Solution as balancedBinaryTreeSolution
 
 
     #
@@ -170,6 +171,10 @@ if __name__ == "__main__":
     print(Solution().averageOfLevels(root))
     print("Leaf nodes===",noOfLeafNodes(root))
     print(num_of_leaf_nodes_using_inorder_traversal(root))
+
+    print("is balanced flag:",balancedBinaryTreeSolution().isBalanced(root2))
+    print("is balanced flag optimized:",balancedBinaryTreeSolution().is_balanced_optimized(root2).is_balanced)
+
 
 
 

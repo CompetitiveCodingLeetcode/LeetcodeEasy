@@ -42,8 +42,45 @@ The number of nodes in the tree is in the range [0, 5000].
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from HeightOfTree import height_of_tree
+
+class TreeInfo:
+    def __init__(self,is_balanced,height):
+        self.is_balanced = is_balanced
+        self.height = height
 
 class Solution:
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+    # Time complexity: O(n^2)
+    def isBalanced(self, root) -> bool:
         # to check whether a tree is balanced or not
+        if root is None or (root.left is None and root.right is None):
+            return True
+        else:
+            left_ans = self.isBalanced(root.left)
+            right_ans = self.isBalanced(root.right)
+            curr_ans = abs(height_of_tree(root.left)-height_of_tree(root.right)) <= 1
+            # print("curr_ans====",curr_ans)
+            if left_ans and right_ans and curr_ans:
+                return True
+            else:
+                return False
+
+    # Time complexity: O(n)
+    def is_balanced_optimized(self,root):
+        if root is None:
+            return TreeInfo(True,0)
+        elif root.left is None and root.right is None:
+            return TreeInfo(True,1)
+        else:
+            left_ans = self.is_balanced_optimized(root.left)
+            right_ans = self.is_balanced_optimized(root.right)
+            curr_ans = abs(left_ans.height-right_ans.height) <= 1
+
+            if left_ans.is_balanced and right_ans.is_balanced and curr_ans:
+                return TreeInfo(True,max(left_ans.height,right_ans.height))
+            else:
+                return TreeInfo(False,max(left_ans.height,right_ans.height))
+
+
+
 
