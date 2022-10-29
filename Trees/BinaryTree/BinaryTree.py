@@ -15,6 +15,7 @@ from HeightOfTree import height_of_tree
 from balancedBinaryTree_Q110 import Solution as balancedBinaryTreeSolution
 from IsSumTree import Solution as isSumTreeSolution
 from BinaryTreeZigzagLevelOrderTraversal_Q103 import Solution as ZigzagTraversal
+from BoundaryOfBinaryTree_Q545 import Solution as BoundaryBT
 
     #
     # def __str__(self):
@@ -183,6 +184,8 @@ if __name__ == "__main__":
     print("is sum tree:",isSumTreeSolution().is_sum_tree(root3).is_sum_tree)
 
     print("zig zag level order traversal:",ZigzagTraversal().zigzagLevelOrder(root2))
+
+    print("boundary elements of tree:",BoundaryBT().boundaryOfBinaryTree(root2))
 
 
 # newBT = BinaryTreeNode("Drinks")
