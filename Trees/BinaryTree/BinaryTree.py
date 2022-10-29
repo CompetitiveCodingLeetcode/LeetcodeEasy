@@ -14,7 +14,7 @@ from countLeafNodes import noOfLeafNodes, num_of_leaf_nodes_using_inorder_traver
 from HeightOfTree import height_of_tree
 from balancedBinaryTree_Q110 import Solution as balancedBinaryTreeSolution
 from IsSumTree import Solution as isSumTreeSolution
-
+from BinaryTreeZigzagLevelOrderTraversal_Q103 import Solution as ZigzagTraversal
 
     #
     # def __str__(self):
@@ -181,6 +181,8 @@ if __name__ == "__main__":
     root3 = btree3.build_from_level_order_traversal(root3)
     print(btree3.level_order_traversal_pretty(root3))
     print("is sum tree:",isSumTreeSolution().is_sum_tree(root3).is_sum_tree)
+
+    print("zig zag level order traversal:",ZigzagTraversal().zigzagLevelOrder(root2))
 
 
 # newBT = BinaryTreeNode("Drinks")
