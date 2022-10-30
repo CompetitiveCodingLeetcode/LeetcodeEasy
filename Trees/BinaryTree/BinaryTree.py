@@ -18,6 +18,7 @@ from BinaryTreeZigzagLevelOrderTraversal_Q103 import Solution as ZigzagTraversal
 from BoundaryOfBinaryTree_Q545 import Solution as BoundaryBT
 from VerticalOrderTraversalOfBinaryTree_Q987 import Solution as VerticalOrderTraversal
 from TopViewOTree import Solution as TopView
+from BottomViewOTree import Solution as BottomView
 
     #
     # def __str__(self):
@@ -195,6 +196,8 @@ if __name__ == "__main__":
     # print("vertical order traversal: ",VerticalOrderTraversal().verticalTraversal(root4))
 
     # print("top view=",TopView().top_view_of_tree(root2))
+
+    # print("bottom view=",TopView().bottom_view_of_tree(root2))
 
 
 
