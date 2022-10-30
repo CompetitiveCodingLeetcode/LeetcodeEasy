@@ -16,6 +16,7 @@ from balancedBinaryTree_Q110 import Solution as balancedBinaryTreeSolution
 from IsSumTree import Solution as isSumTreeSolution
 from BinaryTreeZigzagLevelOrderTraversal_Q103 import Solution as ZigzagTraversal
 from BoundaryOfBinaryTree_Q545 import Solution as BoundaryBT
+from VerticalOrderTraversalOfBinaryTree_Q987 import Solution as VerticalOrderTraversal
 
     #
     # def __str__(self):
@@ -186,6 +187,12 @@ if __name__ == "__main__":
     print("zig zag level order traversal:",ZigzagTraversal().zigzagLevelOrder(root2))
 
     print("boundary elements of tree:",BoundaryBT().boundaryOfBinaryTree(root2))
+
+    root4 = BinaryTreeNode()
+    btree4 = BinaryTree()
+    root4 = btree4.build_from_level_order_traversal(root4)
+    print("vertical order traversal: ",VerticalOrderTraversal().verticalTraversal(root4))
+
 
 
 # newBT = BinaryTreeNode("Drinks")
