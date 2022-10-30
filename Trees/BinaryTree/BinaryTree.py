@@ -20,6 +20,7 @@ from VerticalOrderTraversalOfBinaryTree_Q987 import Solution as VerticalOrderTra
 from TopViewOTree import Solution as TopView
 from BottomViewOTree import Solution as BottomView
 from LeftViewOfTree import Solution as LeftView
+from RightViewOfTree_Q199 import Solution as RightView
 
     #
     # def __str__(self):
@@ -203,6 +204,7 @@ if __name__ == "__main__":
     # print("left view of tree: ",LeftView().left_view_of_tree(root2))
     print("left view using level order traversal:",LeftView().left_view_of_tree_using_level_order_traversal(root2))
 
+    print("right view using level order traversal:",RightView().rightSideView(root2))
 
 
 # newBT = BinaryTreeNode("Drinks")
