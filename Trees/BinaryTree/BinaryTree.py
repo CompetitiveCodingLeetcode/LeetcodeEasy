@@ -21,6 +21,7 @@ from TopViewOTree import Solution as TopView
 from BottomViewOTree import Solution as BottomView
 from LeftViewOfTree import Solution as LeftView
 from RightViewOfTree_Q199 import Solution as RightView
+from DiagonalTraversalOfBinaryTree import Solution as DiagonalTraversal
 
     #
     # def __str__(self):
@@ -206,6 +207,7 @@ if __name__ == "__main__":
 
     print("right view using level order traversal:",RightView().rightSideView(root2))
     print("right view of tree using recursion:",RightView().right_view_using_recursion(root2))
+    print("diagonal traversal:",DiagonalTraversal().diagonal_traversal(root2))
 
 
 # newBT = BinaryTreeNode("Drinks")
