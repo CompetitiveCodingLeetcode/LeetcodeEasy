@@ -194,7 +194,8 @@ if __name__ == "__main__":
     # root4 = btree4.build_from_level_order_traversal(root4)
     # print("vertical order traversal: ",VerticalOrderTraversal().verticalTraversal(root4))
 
-    print("top view=",TopView().top_view_of_tree(root2))
+    # print("top view=",TopView().top_view_of_tree(root2))
+
 
 
 # newBT = BinaryTreeNode("Drinks")
