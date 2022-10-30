@@ -38,7 +38,6 @@ Constraints:
 """
 
 class Solution:
-    # infinite loop
     def top_view_of_tree(self,root):
         ans = []
         if root is None:
@@ -48,7 +47,7 @@ class Solution:
         q.append((root,0))
         while len(q) != 0:
             temp = q[0]
-            q.pop()
+            q.pop(0)
             front_node = temp[0]
             horizontal_distance = temp[1]
 
@@ -60,7 +59,9 @@ class Solution:
             if front_node.right:
                 q.append((front_node.right,horizontal_distance+1))
         print("out of whie loop")
-        sorted(horizontal_distance_to_node_mapping,key=horizontal_distance_to_node_mapping.keys())
-        for key,val in horizontal_distance_to_node_mapping.items():
-            ans.append(val)
+        print(horizontal_distance_to_node_mapping)
+        horizontal_distance_to_node_mapping = sorted(horizontal_distance_to_node_mapping.items(),key=lambda x: x[0])
+        print(horizontal_distance_to_node_mapping)
+        for item in horizontal_distance_to_node_mapping:
+            ans.append(item[1])
         return ans

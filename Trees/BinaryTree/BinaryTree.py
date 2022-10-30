@@ -19,6 +19,7 @@ from BoundaryOfBinaryTree_Q545 import Solution as BoundaryBT
 from VerticalOrderTraversalOfBinaryTree_Q987 import Solution as VerticalOrderTraversal
 from TopViewOTree import Solution as TopView
 from BottomViewOTree import Solution as BottomView
+from LeftViewOfTree import Solution as LeftView
 
     #
     # def __str__(self):
@@ -190,14 +191,17 @@ if __name__ == "__main__":
 
     print("boundary elements of tree:",BoundaryBT().boundaryOfBinaryTree(root2))
 
-    # root4 = BinaryTreeNode()
-    # btree4 = BinaryTree()
-    # root4 = btree4.build_from_level_order_traversal(root4)
-    # print("vertical order traversal: ",VerticalOrderTraversal().verticalTraversal(root4))
+    root4 = BinaryTreeNode()
+    btree4 = BinaryTree()
+    root4 = btree4.build_from_level_order_traversal(root4)
+    print("vertical order traversal: ",VerticalOrderTraversal().verticalTraversal(root4))
 
-    # print("top view=",TopView().top_view_of_tree(root2))
+    print("top view=",TopView().top_view_of_tree(root2))
 
-    # print("bottom view=",TopView().bottom_view_of_tree(root2))
+    print("bottom view=",BottomView().bottom_view_of_tree(root2))
+
+    # print("left view of tree: ",LeftView().left_view_of_tree(root2))
+    print("left view using level order traversal:",LeftView().left_view_of_tree_using_level_order_traversal(root2))
 
 
 

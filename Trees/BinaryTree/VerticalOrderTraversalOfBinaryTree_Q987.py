@@ -51,7 +51,6 @@ from typing import List
 
 
 class Solution:
-    # going into infinite loop solution in lec 64 45:00
     def verticalTraversal(self, root) -> List[List[int]]:
         distance_to_node_mapping = {}
         q = []
@@ -63,7 +62,7 @@ class Solution:
         q.append((root,(level,horizontal_distance)))
         while len(q) != 0:
             temp = q[0]
-            q.pop()
+            q.pop(0)
             level = temp[1][0]
             horizontal_distance = temp[1][1]
             if horizontal_distance in distance_to_node_mapping.keys():
@@ -80,12 +79,11 @@ class Solution:
                 new_horizontal_distance = horizontal_distance + 1
                 q.append((temp[0].right,(new_level,new_horizontal_distance)))
             print("q=",q)
-        sorted(distance_to_node_mapping,key=distance_to_node_mapping.keys())
+        distance_to_node_mapping = sorted(distance_to_node_mapping.items(),key=lambda x: x[0])
 
-        for key,val in distance_to_node_mapping.items():
-            print("key=",key," val=",val)
-            for item in val:
-                ans.append(item)
+        for item in distance_to_node_mapping:
+            for i in item[1]:
+                ans.append(i)
         return ans
 
         
