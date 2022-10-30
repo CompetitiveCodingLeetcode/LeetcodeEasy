@@ -28,6 +28,8 @@ from typing import List
 
 class Solution:
     def rightSideView(self, root) -> List[int]:
+        if root is None:
+            return []
         q = []
         q.append(root)
         ans = []
