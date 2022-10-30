@@ -74,11 +74,11 @@ class Solution:
             if temp[0].left:
                 new_level = level+1
                 new_horizontal_distance = horizontal_distance - 1
-                q.append((root.left,(new_level,new_horizontal_distance)))
+                q.append((temp[0].left,(new_level,new_horizontal_distance)))
             if temp[0].right:
                 new_level = level + 1
                 new_horizontal_distance = horizontal_distance + 1
-                q.append((root.right,(new_level,new_horizontal_distance)))
+                q.append((temp[0].right,(new_level,new_horizontal_distance)))
             print("q=",q)
         sorted(distance_to_node_mapping,key=distance_to_node_mapping.keys())
 
