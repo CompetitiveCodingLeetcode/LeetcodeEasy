@@ -27,6 +27,8 @@ from typing import List
 
 
 class Solution:
+    def __init__(self):
+        self.ans = []
     def rightSideView(self, root) -> List[int]:
         if root is None:
             return []
@@ -45,3 +47,17 @@ class Solution:
                 if temp.right:
                     q.append(temp.right)
         return ans
+
+    def solve(self,root,level):
+        if root is None:
+            return self.ans
+
+        if level == len(self.ans):
+            self.ans.append(root.val)
+
+        self.solve(root.right,level+1)
+        self.solve(root.left,level+1)
+
+    def right_view_using_recursion(self,root):
+        self.solve(root,0)
+        return self.ans

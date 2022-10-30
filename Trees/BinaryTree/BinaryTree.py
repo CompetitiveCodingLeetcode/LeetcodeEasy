@@ -205,6 +205,7 @@ if __name__ == "__main__":
     print("left view using level order traversal:",LeftView().left_view_of_tree_using_level_order_traversal(root2))
 
     print("right view using level order traversal:",RightView().rightSideView(root2))
+    print("right view of tree using recursion:",RightView().right_view_using_recursion(root2))
 
 
 # newBT = BinaryTreeNode("Drinks")
