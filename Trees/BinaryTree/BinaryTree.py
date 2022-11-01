@@ -22,6 +22,7 @@ from BottomViewOTree import Solution as BottomView
 from LeftViewOfTree import Solution as LeftView
 from RightViewOfTree_Q199 import Solution as RightView
 from DiagonalTraversalOfBinaryTree import Solution as DiagonalTraversal
+from sumOfNodesInLongestPathFromRootToLeaf import Solution as SumLongestPathRootToLeaf
 
     #
     # def __str__(self):
@@ -209,7 +210,7 @@ if __name__ == "__main__":
     print("right view of tree using recursion:",RightView().right_view_using_recursion(root2))
     print("diagonal traversal:",DiagonalTraversal().diagonal_traversal(root2))
 
-
+    print("sum of node in longest path from root to leaf node:",SumLongestPathRootToLeaf().sum_of_long_root_to_leaf_node(root2))
 # newBT = BinaryTreeNode("Drinks")
 # leftChild = BinaryTreeNode("Hot")
 # rightChild = BinaryTreeNode("Cold")
