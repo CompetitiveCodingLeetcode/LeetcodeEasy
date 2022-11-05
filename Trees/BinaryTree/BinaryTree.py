@@ -24,6 +24,7 @@ from RightViewOfTree_Q199 import Solution as RightView
 from DiagonalTraversalOfBinaryTree import Solution as DiagonalTraversal
 from sumOfNodesInLongestPathFromRootToLeaf import Solution as SumLongestPathRootToLeaf
 from LowestCommonAncestor_Q236 import Solution as LCA
+from PathSum_Q112 import Solution as PathSum1
 
     #
     # def __str__(self):
@@ -214,10 +215,18 @@ if __name__ == "__main__":
     print("sum of node in longest path from root to leaf node:",SumLongestPathRootToLeaf().sum_of_long_root_to_leaf_node(root2))
 
     # root = [3,5,1,6,2,0,8,-1,-1,7,4], p = 5, q = 4
+    print("For LCA")
     root5 = BinaryTreeNode()
     btree5 = BinaryTree()
     root5 = btree5.build_from_level_order_traversal(root5)
     print("LCA by recursion:",LCA().lowestCommonAncestor(root5,5,4).val)
+
+    #root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+    print("For Path Sum 1:")
+    root6 = BinaryTreeNode()
+    btree6 = BinaryTree()
+    root6 = btree6.build_from_level_order_traversal(root6)
+    print("Path sum 1 = ",PathSum1().hasPathSum(root6,22))
 
 # newBT = BinaryTreeNode("Drinks")
 # leftChild = BinaryTreeNode("Hot")
