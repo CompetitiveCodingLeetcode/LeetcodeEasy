@@ -26,6 +26,7 @@ from sumOfNodesInLongestPathFromRootToLeaf import Solution as SumLongestPathRoot
 from LowestCommonAncestor_Q236 import Solution as LCA
 from PathSum_Q112 import Solution as PathSum1
 from PathSum2_Q113 import Solution as PathSum2
+from PathSum3_Q437 import Solution as PathSum3
 
 
     #
@@ -237,6 +238,14 @@ if __name__ == "__main__":
     btree7 = BinaryTree()
     root7 = btree7.build_from_level_order_traversal(root7)
     print("Path sum2 =",PathSum2().pathSum(root7,22))
+
+    #Input: root = [10, 5, -3, 3, 2, null, 11, 3, -2, null, 1], targetSum = 8
+    #Output: 3
+    print("For Path Sum3:")
+    root8 = BinaryTreeNode()
+    btree8 = BinaryTree()
+    root8 = btree8.build_from_level_order_traversal(root8)
+    print("Path sum3 =", PathSum3().pathSum(root8, 8))
 
 # newBT = BinaryTreeNode("Drinks")
 # leftChild = BinaryTreeNode("Hot")
