@@ -73,6 +73,64 @@ class BinaryTree:
 
         return root
 
+    def find_position(self,inorder_traversal,element,n):
+        for i in range(0,n):
+            if inorder_traversal[i] == element:
+                return i
+
+        return -1
+
+
+    def solve(self,preorder_traersal,inorder_traversal,preorder_idx,inorder_start_idx,inorder_end_idx,n):
+
+        #base case
+        if preorder_idx >= n or (inorder_start_idx > inorder_end_idx):
+            return None
+
+        element = preorder_traersal[preorder_idx]
+        preorder_idx += 1
+        root = BinaryTreeNode(element)
+        pos = self.find_position(inorder_traversal,element,n)
+
+        # recursive calls
+        root.left = self.solve(preorder_traersal,inorder_traversal,preorder_idx,inorder_start_idx,pos-1,n)
+        root.right = self.solve(preorder_traersal,inorder_traversal,preorder_idx,pos+1,inorder_end_idx,n)
+
+        return root
+
+
+    def build_tree_from_preorder_inorder_traversal(self,preorder_traversal, inorder_traversal, n):
+        """
+        q 105
+        Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.
+
+
+
+        Example 1:
+
+
+        Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+        Output: [3,9,20,null,null,15,7]
+        Example 2:
+
+        Input: preorder = [-1], inorder = [-1]
+        Output: [-1]
+
+
+        Constraints:
+
+        1 <= preorder.length <= 3000
+        inorder.length == preorder.length
+        -3000 <= preorder[i], inorder[i] <= 3000
+        preorder and inorder consist of unique values.
+        Each value of inorder also appears in preorder.
+        preorder is guaranteed to be the preorder traversal of the tree.
+        inorder is guaranteed to be the inorder traversal of the tree.
+        """
+        pre_order_idx = 0
+        ans = self.solve(preorder_traversal,inorder_traversal,pre_order_idx,0,n-1,n)
+        print("postorder traversal of tree built from inorder and preorder traversal is:",self.postorder_traversal(ans))
+
 
 
     def preorder_traversal(self, root: BinaryTreeNode):
@@ -246,6 +304,11 @@ if __name__ == "__main__":
     btree8 = BinaryTree()
     root8 = btree8.build_from_level_order_traversal(root8)
     print("Path sum3 =", PathSum3().pathSum(root8, 8))
+
+    # q105 construct binary tree from preorder and inorder traversal
+    preorder = [3, 9, 20, 15, 7]
+    inorder = [9, 3, 15, 20, 7]
+    btree.build_tree_from_preorder_inorder_traversal(preorder,inorder,5)
 
 # newBT = BinaryTreeNode("Drinks")
 # leftChild = BinaryTreeNode("Hot")
