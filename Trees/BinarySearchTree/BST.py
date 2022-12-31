@@ -1,5 +1,5 @@
 from collections import deque
-from SearchBST_Q700 import searchBST
+from SearchBST_Q700 import searchBST,searchBST_iterative
 from BSTNode import BSTNode
 
 
@@ -53,9 +53,25 @@ class BST:
             if temp.right:
                 level_order_nodes.append(temp.right)
 
+    def find_max_in_BST(self,root) -> int:
+        temp = root
+        if temp is None:
+            return
+        while temp.right is not None:
+            temp = temp.right
+        return temp.val
+
+    def find_min_in_BST(self,root) -> int:
+        temp = root
+        if temp is None:
+            return
+        while temp.left is not None:
+            temp = temp.left
+        return temp.val
 
 binary_search_tree = BST()
 root = BSTNode(5)
+# Insertion time complexity: O(log n)
 binary_search_tree.insert(root, 5)
 binary_search_tree.insert(root, 7)
 binary_search_tree.insert(root, 9)
@@ -64,14 +80,26 @@ binary_search_tree.insert(root, 3)
 binary_search_tree.insert(root, 1)
 binary_search_tree.insert(root, 2)
 binary_search_tree.insert(root, 4)
+print("Preorder traversal")
 binary_search_tree.preorder_traversal(root)
 print()
+print("Inorder traversal")
+# observation: Inorder traversal of BST is sorted
 binary_search_tree.inorder_traversal(root)
 print()
+print("Postorder traversal")
 binary_search_tree.postorder_traversal(root)
 print()
+print("Level order traversal")
 binary_search_tree.level_order_traversal(root)
 print()
 temp = searchBST(root,3)
 print("subtree after searching:")
 binary_search_tree.preorder_traversal(temp)
+temp = searchBST_iterative(root,3)
+print("subtree after searching:")
+binary_search_tree.preorder_traversal(temp)
+# time complexity: O(height)
+print("\nmax in BST:",binary_search_tree.find_max_in_BST(root))
+# time complexity: O(height)
+print("min in BST:",binary_search_tree.find_min_in_BST(root))

@@ -25,6 +25,8 @@ root is a binary search tree.
 1 <= val <= 107
 """
 from BSTNode import BSTNode
+
+# recursive solution time complexity: O(height); space complexity:O(height)
 def searchBST(root,val) -> BSTNode:
     if root is None or root.val == val:
         return root
@@ -32,3 +34,19 @@ def searchBST(root,val) -> BSTNode:
         return searchBST(root.right,val)
     else:
         return searchBST(root.left,val)
+
+
+# iterative solution time compexity: O(height); space complexity: O(1)
+def searchBST_iterative(root,val) -> BSTNode:
+    temp = root
+
+    while temp is not None:
+        if temp.val == val:
+            return temp
+        elif temp.val < val:
+            temp = temp.right
+        else:
+            temp = temp.left
+
+    return temp
+
