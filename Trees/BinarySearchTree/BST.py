@@ -4,6 +4,10 @@ from BSTNode import BSTNode
 
 
 class BST:
+
+    # def __init__(self):
+    #     self.pre = None
+    #     self.succ = None
     def insert(self, root, key):
         if root is None:
             return BSTNode(key)
@@ -69,6 +73,62 @@ class BST:
             temp = temp.left
         return temp.val
 
+    # algo:
+    """
+    1. If root is NULL
+      then return
+2. if key is found then
+    a. If its left subtree is not null
+        Then predecessor will be the right most 
+        child of left subtree or left child itself.
+    b. If its right subtree is not null
+        The successor will be the left most child 
+        of right subtree or right child itself.
+    return
+3. If key is smaller than root node
+        set the successor as root
+        search recursively into left subtree
+    else
+        set the predecessor as root
+        search recursively into right subtree"""
+    def find_inorder_predecessor_successor(self,root,key,predecessor,successor):
+        if root is None:
+            return predecessor.val,successor.val
+
+        # if key is present at root
+        if root.val == key:
+            # inorder predecessor is the greatest value in the left sub tree i.e., rightmost value in left subtree
+            if root.left is not None:
+                temp = root.left
+                while temp.right:
+                    temp = temp.right
+                predecessor = temp
+
+            if root.right is not None:
+                temp = root.right
+                while temp.left:
+                    temp = temp.left
+                successor = temp
+            return predecessor.val,successor.val
+
+        elif root.val > key:
+            successor = root
+            return self.find_inorder_predecessor_successor(root.left,key,predecessor, successor)
+
+        else:
+            predecessor = root
+            return self.find_inorder_predecessor_successor(root.right,key,predecessor, successor)
+
+        # return predecessor.val,successor.val
+
+
+"""
+        5
+      5   7
+    3       9
+  1   4       10
+    2
+"""
 binary_search_tree = BST()
 root = BSTNode(5)
 # Insertion time complexity: O(log n)
@@ -103,3 +163,5 @@ binary_search_tree.preorder_traversal(temp)
 print("\nmax in BST:",binary_search_tree.find_max_in_BST(root))
 # time complexity: O(height)
 print("min in BST:",binary_search_tree.find_min_in_BST(root))
+pre,suc = binary_search_tree.find_inorder_predecessor_successor(root,2,None,None)
+print(f"predecessor={pre},successsor={suc}")
