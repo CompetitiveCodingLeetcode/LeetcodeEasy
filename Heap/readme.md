@@ -34,3 +34,4 @@
 - to avoid writing code for min and max heap we can use priority queue data structure.
 - we should use heapq module to use priority queue as heap
 - https://docs.python.org/3/library/heapq.html
+- https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
