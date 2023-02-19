@@ -27,3 +27,10 @@
       - assign i as largest and find the left node idx and right node idx.
       - check condition for left and right nodes and update values of largest
       - if value of largest has been chnages then it would not be equal to i and hence call heapify for rest of the elements.
+
+## heap sort
+
+## priority queue as min or max heap
+- to avoid writing code for min and max heap we can use priority queue data structure.
+- we should use heapq module to use priority queue as heap
+- https://docs.python.org/3/library/heapq.html
