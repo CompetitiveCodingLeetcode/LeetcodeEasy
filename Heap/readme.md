@@ -22,7 +22,7 @@
 - In a complete binary tree:
   - leaf nodes lie from ((n/2)+1)th index to nth index.
   - leaf node can be assumed to be a heap in itself.
-  - from 0 to (n/2)th index, do heapify to convert into max or min heap.
+  - from (n/2)th index to 0, do heapify to convert into max or min heap.
     - Algo:
       - assign i as largest and find the left node idx and right node idx.
       - check condition for left and right nodes and update values of largest
