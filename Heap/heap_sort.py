@@ -1,9 +1,12 @@
 """
 Algo:
-1. Swap the first and last elements of current heap
-2. reduce the size of curret heap by 1
-3. heapify the smaller heap according to the property(max heap or min heap).
-We are saying that the end part of the heap is sorted after every iteration. Iterations will continue till size of heap is gretaer than 1.
+given: a random array.
+i) build heap using heapify
+ii) heap sort
+    1. Swap the first and last elements of current heap
+    2. reduce the size of curret heap by 1
+    3. heapify the smaller heap according to the property(max heap or min heap).
+    We are saying that the end part of the heap is sorted after every iteration. Iterations will continue till size of heap is gretaer than 1.
 """
 # time complexity: O(nlogn)
 from heap import Heap
