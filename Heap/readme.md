@@ -35,3 +35,12 @@
 - we should use heapq module to use priority queue as heap
 - https://docs.python.org/3/library/heapq.html
 - https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
+
+## Applications of Heap:
+- find kth largest element in an array
+  - Algo 1:
+    - sort the array in descending order
+    - return element at k-1 th position in the array.
+    - Time complexity: O(nlogn)
+  - Algo 2 using heap:
+    - 

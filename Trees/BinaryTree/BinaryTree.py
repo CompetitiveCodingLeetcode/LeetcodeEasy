@@ -234,6 +234,7 @@ if __name__ == "__main__":
 
     print(countNodes(root))
     print(countNodesRecursively(root))
+    print("sum of nodes:")
     print(sum_of_nodes(root))
     print("diameter = ",find_diameter(root))
     print("dimeter by optimized approach=",find_diameter_optimized_approach(root).diameter)
