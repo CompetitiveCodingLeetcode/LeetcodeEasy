@@ -1,4 +1,4 @@
-## TODO: implementation of heap using heapq module
+## TODO: implementation of heap using heapq module: done in heap_using_hepq.py file
 
 class Heap:
     def __init__(self,arr):
