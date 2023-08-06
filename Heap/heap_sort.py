@@ -16,6 +16,7 @@ hp = Heap([None,54,53,55,52,50])
 for i in range(hp.heap_size//2,0,-1):
     hp.heapify_max_heap(hp.heap_size,i)
 
+print("heap after heapify:",hp.heap_arr[1:])
 i=1
 t = hp.heap_size
 while t>1:
