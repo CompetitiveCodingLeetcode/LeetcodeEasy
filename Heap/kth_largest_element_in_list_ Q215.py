@@ -21,6 +21,21 @@ Constraints:
 
 1 <= k <= nums.length <= 105
 -104 <= nums[i] <= 104
+
+
+Approach 1:
+sort the array in descending order and the element at kth position in sorted array is the answer.
+Time complexity: O(nlogn)
+Space complexity: O(1)
+
+Approach 2:
+1. put the irst k elements of array in min heap
+2. for elemnts from k to len-1
+    i) if the element is greater than root of heap then delete/pop elemnt from heap and put the greater element
+3. return root of min heap
+Time complexity: O(k +(n-k)logk)
+Space complexity: O(k)
+
 """
 import unittest
 from typing import List
