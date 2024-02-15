@@ -5,7 +5,7 @@ nums = [-1, -2, 0, 16, 177, -19, 34, 3]
 ans = [16,177,34]
 """
 
-from heapq import heappush, heappop, heapify
+from heapq import heapify
 
 def find_k_max_elements(nums,k):
     nums = [(-1*num) for num in nums]

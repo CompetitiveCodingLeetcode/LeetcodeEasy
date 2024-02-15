@@ -29,7 +29,7 @@ Time complexity: O(nlogn)
 Space complexity: O(1)
 
 Approach 2:
-1. put the first k elements of array in max heap
+1. create max heap of first k elements of array
 2. for elemnts from k to len-1
     i) if the element is greater than root of heap then delete/pop element from heap and put the greater element
 3. return root of max heap
