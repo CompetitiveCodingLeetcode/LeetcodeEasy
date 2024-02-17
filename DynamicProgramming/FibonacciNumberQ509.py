@@ -37,20 +37,38 @@ class Solution:
             return n
         return self.fib_recursive(n-1) + self.fib_recursive(n-2)
 
-    def fib_dp(self,n,dp_arr):
+    def fib_dp_memoization(self,n,dp_arr):
         if n==0 or n==1:
             return n
         if dp_arr[n] != -1:
             return dp_arr[n]
 
-        dp_arr[n] = self.fib_dp(n-1,dp_arr) + self.fib_dp(n-2,dp_arr)
+        dp_arr[n] = self.fib_dp_memoization(n-1,dp_arr) + self.fib_dp_memoization(n-2,dp_arr)
         return dp_arr[n]
 
     def fib(self, n: int) -> int:
         dp_arr = [-1]*(n+1)
-        return self.fib_dp(n, dp_arr)
+        return self.fib_dp_memoization(n, dp_arr)
 
+    def fib_dp_tabulation(self,n: int) -> int:
+        dp = []
+        dp.append(0)
+        dp.append(1)
+        for i in range(2,n+1):
+            dp.append(dp[i-1] + dp[i-2])
+        return dp[n]
 
+    def fib_dp_tabulation_space_optimized(self,n: int) -> int:
+        if n==0 or n==1:
+            return n
+        prev1 = 0
+        prev2 = 1
+        curr=-1
+        for i in range(2,n+1):
+            curr = prev1 + prev2
+            prev1 = prev2
+            prev2 = curr
+        return curr
 
 
 class TestSolution(unittest.TestCase):
@@ -74,3 +92,21 @@ class TestSolution(unittest.TestCase):
 
     def test_dp_3(self):
         self.assertEqual(self.obj.fib_recursive(6),8)
+
+    def test_dp_tabulation_1(self):
+        self.assertEqual(self.obj.fib_dp_tabulation(3),2)
+
+    def test_dp_tabulation_2(self):
+        self.assertEqual(self.obj.fib_dp_tabulation(1),1)
+
+    def test_dp_tabulation_3(self):
+        self.assertEqual(self.obj.fib_dp_tabulation(6),8)
+
+    def test_dp_tabulation_space_optimized_1(self):
+        self.assertEqual(self.obj.fib_dp_tabulation_space_optimized(3),2)
+
+    def test_dp_tabulation_space_optimized_2(self):
+        self.assertEqual(self.obj.fib_dp_tabulation_space_optimized(1),1)
+
+    def test_dp_tabulation_space_optimized_3(self):
+        self.assertEqual(self.obj.fib_dp_tabulation_space_optimized(6),8)
