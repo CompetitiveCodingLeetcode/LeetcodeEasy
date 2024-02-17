@@ -26,19 +26,48 @@ import unittest
 
 class Solution:
     # recursive solution gives TLE error on leetcode
-    def climbStairsDP(self,n,dp_arr):
+
+    def climbStairsDP_bottom_up_space_optimized(self,n):
+        if n<0:
+            return 0
+        if n==0 or n==1:
+            return 1
+        prev1 = 1
+        prev2 = 1
+        curr=-1
+
+        for i in range(2,n+1):
+            curr = prev1 + prev2
+            prev1 = prev2
+            prev2 = curr
+        return curr
+
+    def climbStairsDP_bottom_up(self,n):
+        if n<0:
+            return 0
+        if n==0:
+            return 1
+        dp = []
+        dp.append(1)
+        dp.append(1)
+
+        for i in range(2,n+1):
+            dp.append(dp[i-1]+dp[i-2])
+        return dp[n]
+
+    def climbStairsDP_top_down(self,n,dp_arr):
         if n<0:
             return 0
         if n==0:
             return 1
         if dp_arr[n] != -1:
             return dp_arr[n]
-        dp_arr[n] = self.climbStairsDP(n-1,dp_arr) + self.climbStairsDP(n-2,dp_arr)
+        dp_arr[n] = self.climbStairsDP_top_down(n-1,dp_arr) + self.climbStairsDP_top_down(n-2,dp_arr)
         return dp_arr[n]
 
     def climbStairs(self, n: int) -> int:
         dp_arr = [-1] * (n+1)
-        return self.climbStairsDP(n,dp_arr)
+        return self.climbStairsDP_top_down(n,dp_arr)
 
 class TestSolution(unittest.TestCase):
     def setUp(self) -> None:
@@ -49,3 +78,15 @@ class TestSolution(unittest.TestCase):
 
     def test_case_2(self):
         self.assertEqual(self.obj.climbStairs(3),3)
+
+    def test_case_3(self):
+        self.assertEqual(self.obj.climbStairsDP_bottom_up(2),2)
+
+    def test_case_4(self):
+        self.assertEqual(self.obj.climbStairsDP_bottom_up(3),3)
+
+    def test_case_5(self):
+        self.assertEqual(self.obj.climbStairsDP_bottom_up_space_optimized(2),2)
+
+    def test_case_6(self):
+        self.assertEqual(self.obj.climbStairsDP_bottom_up_space_optimized(3),3)
