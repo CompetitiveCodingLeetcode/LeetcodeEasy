@@ -1,5 +1,5 @@
 ### QUEUE
-- it is a data structure that stores items in FIFO manner.
+- it is a data structure that stores items in **FIFO** manner.
 
 
 ### opeartions in Queue
