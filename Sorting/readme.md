@@ -43,6 +43,8 @@ The following link contains the possible ways to do customized sorting using sor
 - Average case time complexity: O(n^2)
 - Best case time complexity: O(n^2)
 - Worst case space complexity: O(n^2) total, O(1) in auxilary
+- remember the algo using card example (you are picking card one by one and arranging in sorted order in your hand)
+
 
 ## MERGE SORT
 

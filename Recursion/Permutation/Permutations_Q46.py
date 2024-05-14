@@ -22,6 +22,12 @@ Constraints:
 1 <= nums.length <= 6
 -10 <= nums[i] <= 10
 All the integers of nums are unique.
+
+
+APPROACH:
+1. if there are n digits then total permutations will be : n!
+2. for each place there should be all n digits placements.
+for explanation of solution: https://www.youtube.com/watch?v=va3NEycUxsg&list=PLDzeHZWIZsTqBmRGnsCOGNDG5FY0G04Td&index=9
 """
 import unittest
 from typing import List

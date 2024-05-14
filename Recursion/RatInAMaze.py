@@ -121,7 +121,6 @@ class Solution:
         visited[x][y] = 1
 
         self.find_possible_paths(x, y, m, n, visited, ans, path)
-
         if len(ans) == 0:
             return -1
         return ans
