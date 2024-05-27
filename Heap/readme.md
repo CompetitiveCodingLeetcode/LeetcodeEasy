@@ -26,7 +26,7 @@
     - Algo:
       - assign i as largest and find the left node idx and right node idx.
       - check condition for left and right nodes and update values of largest
-      - if value of largest has been chnages then it would not be equal to i and hence call heapify for rest of the elements.
+      - if value of largest has been chnages then it would not be equal to i and hence swap the elements at largest and i and call heapify for rest of the elements.
 
 ## heap sort
 
@@ -35,6 +35,10 @@
 - we should use heapq module to use priority queue as heap
 - https://docs.python.org/3/library/heapq.html
 - https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
+
+## custom heap using heapq:
+- https://www.geeksforgeeks.org/heapq-with-custom-predicate-in-python/
+- check for max heap situation
 
 ## Applications of Heap:
 - find kth largest element in an array

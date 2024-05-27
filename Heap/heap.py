@@ -127,18 +127,18 @@ class Heap:
             self.swap(i,largest)
             self.heapify_max_heap(n,largest)
     def heapify_min_heap(self,n,i):
-        largest = i
+        smallest = i
         left = 2 * i
         right = (2 * i) + 1
 
-        if left < n and self.heap_arr[left] < self.heap_arr[largest]:
-            largest = left
-        if right < n and self.heap_arr[right] < self.heap_arr[largest]:
-            largest = right
+        if left < n and self.heap_arr[left] < self.heap_arr[smallest]:
+            smallest = left
+        if right < n and self.heap_arr[right] < self.heap_arr[smallest]:
+            smallest = right
 
-        if largest != i:
-            self.swap(i,largest)
-            self.heapify_min_heap(n, largest)
+        if smallest != i:
+            self.swap(i,smallest)
+            self.heapify_min_heap(n, smallest)
 
 
 
