@@ -11,4 +11,8 @@ Output :{4,5,6,7,8,9}
 
 Create a Directed Graph between the parent and Child process and perform BFS (Breadth First search)
 
-- 
+### Complexity Analysis
+
+- Time Complexity for BFS: O(N+E)
+  - n = number of nodes
+  - e = number of edges
