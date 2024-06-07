@@ -48,17 +48,17 @@ class TwoStack():
             element = -1
         return element
 
-    # def is_empty_stack1(self):
-    #     if self.top1 == -1:
-    #         return True
-    #     else:
-    #         return False
-    #
-    # def is_empty_stack2(self):
-    #     if self.top2 == self.size:
-    #         return True
-    #     else:
-    #         return False
+    def is_empty_stack1(self):
+        if self.top1 == -1:
+            return True
+        else:
+            return False
+
+    def is_empty_stack2(self):
+        if self.top2 == self.size:
+            return True
+        else:
+            return False
 
     def peek_stack1(self):
         if self.is_empty_stack1():
