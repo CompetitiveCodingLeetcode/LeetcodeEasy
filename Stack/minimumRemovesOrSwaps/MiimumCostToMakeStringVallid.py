@@ -60,7 +60,21 @@ Sample Output 2:
 -1
 
 
-APPROACH: TODO
+APPROACH:
+the approach will be decided on following two points:
+1. number of opening and closing braces
+2. for every closing brace there should be an opening brace before it.
+
+following is the analysis and algo:
+1. if the length of string is odd then there is no possible way which can lead to valid string even after swap.Hence return -1.
+2. remove valid part from a string
+3. For invalid part of even length there are 3 possible cases:
+    i) we have all opening braces: {{{{...
+        in this case let opening braces be A,the ans will be A/2 swaps to make it valid
+    ii) we have all closing brsces: }}}}}}....
+        in this case let closing braces be B, the ans will be B/2 swaps to make it valid
+    iii) we have closing braces in starting and then opening braces in the end: }}}{{{
+        considering all cases of number of opening nnd closing braces possible the ans will be ((A+1)//2) + ((B+1)//2). this expression holds true for i) and ii) also.
 """
 import unittest
 
