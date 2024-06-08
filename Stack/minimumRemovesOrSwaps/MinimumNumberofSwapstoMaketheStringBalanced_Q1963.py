@@ -40,6 +40,8 @@ n == s.length
 n is even.
 s[i] is either '[' or ']'.
 The number of opening brackets '[' equals n / 2, and the number of closing brackets ']' equals n / 2.
+
+Approach written in Stack/minimumRemovesOrSwaps/MiimumCostToMakeStringVallid.py
 """
 import unittest
 
