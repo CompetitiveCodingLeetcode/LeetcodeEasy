@@ -63,7 +63,7 @@ class Solution:
             if self.knows(b, a):
                 members.append(a)
 
-        # 3. now there is onl one candidate left in the stack- he might be a potential candidate for celebrity
+        # 3. now there is only one candidate left in the stack- he might be a potential candidate for celebrity
 
         # 3.1 first check the row must contain all zeros - as the celebrity doesn't knnow anyone
         if len(members) == 0:
