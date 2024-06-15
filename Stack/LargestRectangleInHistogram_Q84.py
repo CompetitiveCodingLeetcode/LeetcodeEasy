@@ -20,7 +20,7 @@ Constraints:
 1 <= heights.length <= 105
 0 <= heights[i] <= 104
 
-APPROACH: it follows the aproach of previous and next smallest element.
+APPROACH: it follows the approach of previous and next smallest element.
 - find prev smaller element indices for each height(p)
 - find next smaller element indices for each height(n)
 - here , the length ie., height at a particular index is fixed and breadth is varying.

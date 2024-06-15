@@ -1,0 +1,2 @@
+- inorder traversal of a BST gives the values sorted in increasing order. 
+- Hence take inorder traversal as R+L then it would give values sorted in decreasing order
