@@ -3,6 +3,8 @@ input from both ends. push_back(),push_front()
 
 output from both ends. pop_back(),pop_front()
 
+
+Application in OS scheduling algorithm
 """
 
 class DoubleEndedQueue():
