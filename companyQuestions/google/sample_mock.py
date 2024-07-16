@@ -59,6 +59,66 @@ Return True
 
 
 
+Round 1:
+'''
+We have a service that streams sequentially-numbered work items to a cluster of workers.
+The workers receive an item, process it, and upon success, acknowledge (ack) the item's sequence number to mark it complete.
+
+Because all of the servers and the datacenter are unreliable, we need to store the workers' progress.
+To do this, the workers send their acks to an accounting server.
+The accounting server is periodically asked for the lowest sequence number that has not been acknowledged (the "lowest unacked"), and this number is stored reliably by another system.
+
+getLowestUnacked():
+ * returns the lowest unacknowledged sequence number
+
+
+acknowledge(sequenceNumber):
+ * worker server calls this function when it completes a work item
+
+start(lowestUnacknowledged):
+ * called exactly once when the accounting server starts
+ * argument is the lowest un-acknowledged sequence number
+
+
+12,
+20,14,16,12,
+unacknowledged: 12,
+acknowledged(sorted): 12,13,14,15,16,17,19
+
+
+len = 6
+a = 12
+d = 1
+
+max = 17
+sum = 87
+
+
+'''
+unacknowledged_val: int, acknowledged: List[int]
+def getLowestUnacked():
+  val = unacknowledged_val
+  idx = find_unacknowledged_val(val,acknowledged) # binary search on acknowledged
+  if idx == -1:
+    unacknowledged_val = val
+  else:
+    while idx != -1: #
+      val += 1
+      idx = find_unacknowledged_val(val,acknowledged)
+    unacknowledged_val = val
+  return unacknowledged_val
+
+def acknowledge(sequenceNumber: int):
+  acknowledge.append(unacknowledged_val)
+  acknowledge = sorted(acknowledge)
+
+def start(lowestUnacknowledged: int):
+    acknowledged = []
+    unacknowledged_val = lowestUnacknowledged
+
+
+
+
 
 
 
