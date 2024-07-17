@@ -30,6 +30,11 @@ Follow up: Could you do this in one pass?
 
 
 Two pointer approach: from educative
+
+Two pointers, left and right, are set at the head node. Move the right pointer n steps forward. After doing that, both pointers are exactly separated by n nodes apart. Start moving both pointers forward until the right pointer reaches the last node. At this point, the left pointer will be pointing to the node before the target node, i.e., the
+nth last node. We relink the left node to the node following the left’s next node.
+
+If the right pointer reaches NULL while moving it n steps forward, it means that the head node should be removed. We return the head's next node.
 """
 
 
