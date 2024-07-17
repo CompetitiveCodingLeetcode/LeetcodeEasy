@@ -35,6 +35,9 @@ Two pointers, left and right, are set at the head node. Move the right pointer n
 nth last node. We relink the left node to the node following the left’s next node.
 
 If the right pointer reaches NULL while moving it n steps forward, it means that the head node should be removed. We return the head's next node.
+
+Time complexity: O(n)
+Space complexity: O(1)
 """
 
 
