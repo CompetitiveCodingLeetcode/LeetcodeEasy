@@ -117,6 +117,73 @@ def start(lowestUnacknowledged: int):
     unacknowledged_val = lowestUnacknowledged
 
 
+# [1,3] -- all numbers between 1 and 3 (inclusive)
+# IntervalsOverlap(interval1, interval2) --> bool
+
+[1,3],[2,4] -- true
+[1,3],[3,4] -- true
+
+[1,3],[2,3]
+
+
+[1,5],[2,3],[3,4][5,6]
+
+[[1,3],[3,4][4,5],[5,6]]
+
+[[1,5][3,6][6,8]]
+[3,5][6,8]
+
+[[3,6],[2,5],[3,4]] --- true
+
+
+
+
+
+
+
+[1,4][4,5]
+[1,5]
+
+# does_intervals_overlap([3,4], [1,2]) --> false
+def does_intervals_overlap(interval1: List[int],interval2: List[int]) -> bool:
+  if interval2[0] <= interval1[1] and (interval2[1] >= interval1[0]):
+    return True
+  return False
+
+
+# AllIntervalsOverlap(intervals): do all intervals overlap with all other intervals?
+
+def check_overlap(intervals: List[List[int]]):
+  merged_value = []
+  while len(intervals) > 0:
+    if len(merged_value) == 0: 
+      interval1 = intervals.pop(0)
+      interval2 = intervals.pop(0)
+    else:
+      interval1 = merged_value
+      interval2 = intervals.pop(0)
+    isOverlapping = does_intervals_overlap(interval1,interval2)
+    if not isOverlapping:
+      return False
+    start = max(interval1[0],interval2[0])
+    end = min(interval1[1],interval2[1])
+    merged_value.extend(start,end)
+  return True
+
+def create_subsets(intervals):
+    for i in range(0,len(intervals)-1):
+      for j in range(i+1,len(intervals)):
+        isOverlapping = does_intervals_overlap(intervals[i],intervals[j])
+        if not isOverlapping:
+          return False
+    return True
+    
+  
+  """
+    
+    
+    
+    
 
 
 
