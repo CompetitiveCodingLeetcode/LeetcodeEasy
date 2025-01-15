@@ -38,5 +38,17 @@ class Solution1():
 
         return slow_ptr
 
+    #Time complexity:O(n), Space complexity: O(1)
+    def mid_of_linked_list(self,head):
+        slow = head
+        fast = head
+        while fast.next != None and fast != None:
+            slow = slow.next
+            if fast.next.next:
+                fast = fast.next.next
+            else:
+                break
+        return slow
+
 obj = Solution1()
 print(obj.middle_of_linked_list_with_head())
