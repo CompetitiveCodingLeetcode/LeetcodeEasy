@@ -1,3 +1,8 @@
+"""
+[[0, 4, 2, 3, 5, 1], [6, 7, 8]]
+"""
+
+
 from Graphs.GraphAdjList import GraphAdjList
 class GraphDFS:
     def dfs_traversal(self,g: GraphAdjList,visited,component_ans,i):
@@ -7,7 +12,8 @@ class GraphDFS:
         else:
             return
         for j in g.adj_list[i]:
-            self.dfs_traversal(g,visited,component_ans,j)
+            if j not in visited.keys():
+                self.dfs_traversal(g,visited,component_ans,j)
 
     def get_dfs_traversal(self,g):
         visited = {}

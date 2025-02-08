@@ -35,6 +35,7 @@ It is guaranteed that the list represents a number that does not have leading ze
 
 
 class Solution:
+    # solution 1
     def reverse_linked_list(self, head):
         last = None
         current = head
@@ -98,4 +99,39 @@ class Solution:
             curr.next = temp
             curr = temp
 
+        return res
+
+    # solution 2
+
+    def calculate_carry_val(self, temp_val):
+        val = temp_val % 10
+        carry = temp_val // 10
+        return carry, val
+
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        carry = 0
+        res = None
+        while l1 is not None or l2 is not None:
+            if l1 and l2:
+                temp_val = l1.val + l2.val + carry
+                l1 = l1.next
+                l2 = l2.next
+            elif l1:
+                temp_val = l1.val + carry
+                l1 = l1.next
+            else:
+                temp_val = l2.val + carry
+                l2 = l2.next
+            carry, value = self.calculate_carry_val(temp_val)
+            if res is None:
+                res = ListNode(value, None)
+                temp = res
+            else:
+                temp_ans = ListNode(value, None)
+                temp.next = temp_ans
+                temp = temp.next
+        if carry > 0:
+            temp_ans = ListNode(carry, None)
+            temp.next = temp_ans
+            temp = temp.next
         return res
