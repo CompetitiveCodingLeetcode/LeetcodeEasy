@@ -45,22 +45,19 @@ class Solution:
     def smallestDivisor(self, nums: List[int], threshold: int) -> int:
         max_val = max(nums)
         min_divisor = max_val + 1
-        possible_divisors = []
-        for i in range(max_val, 0, -1):
-            possible_divisors.append(i)
-        beg = 0
-        end = len(possible_divisors) - 1
+        beg = 1
+        end = max_val
         mid = (beg + end) // 2
         while beg <= end:
-            temp_min = possible_divisors[mid]
+            temp_min = mid
             temp_threshold = 0
             greater = self.is_greater(nums, temp_min, temp_threshold, threshold)
             if greater:
-                end = mid - 1
+                beg = mid + 1
             else:
                 if temp_min < min_divisor:
                     min_divisor = temp_min
-                beg = mid + 1
+                end = mid - 1
             mid = (beg + end) // 2
 
         return min_divisor
